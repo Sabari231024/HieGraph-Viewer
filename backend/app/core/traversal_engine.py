@@ -260,11 +260,18 @@ class TraversalEngine:
         return info
 
     def _build_level_view(self, nodes: List[Node]) -> Dict[str, Any]:
-        """Build a complete level-view response for a set of nodes."""
+        """Build a complete level-view response for a set of nodes.
+        
+        Only same-level nodes are shown. Conditional edge targets from
+        other levels appear as ghost nodes (the only exception).
+        Each node carries its parent list so the frontend can show
+        exit nodes dynamically when a multi-parent node is clicked.
+        """
         node_ids = {n.id for n in nodes}
         merged = self.state_manager.merge()
+        nav_parent = self.nav_stack[-1] if self.nav_stack else None
 
-        # Within-level normal edges
+        # Within-level normal edges (includes INTRA edges)
         edges = self.graph_service.get_edges_between(node_ids)
 
         # Within-level conditional edges (evaluate against state)
@@ -274,24 +281,51 @@ class TraversalEngine:
             if self.condition_engine.evaluate_edge(ce, merged)
         ]
 
-        # Conditional jump edges (to nodes outside this level)
-        all_cond = []
+        # ---- Ghost nodes: conditional edge targets OUTSIDE this level ----
+        ghost_nodes: List[Dict[str, Any]] = []
+        ghost_cond_edges: List[ConditionalEdge] = []
+
         for n in nodes:
             for ce in self.graph_service.get_outgoing_conditional_edges(n.id):
                 if ce.target not in node_ids:
                     if self.condition_engine.evaluate_edge(ce, merged):
                         target = self.graph_service.get_node(ce.target)
-                        all_cond.append({
-                            **ce.model_dump(),
-                            "target_name": target.name if target else ce.target,
-                            "target_level": target.level if target else 0,
-                        })
+                        if target:
+                            if not any(g["id"] == target.id for g in ghost_nodes):
+                                gd = target.model_dump()
+                                gd["is_ghost"] = True
+                                ghost_nodes.append(gd)
+                            ghost_cond_edges.append(ce)
+
+        # Jump edges metadata
+        jump_edges_meta = []
+        for ce in ghost_cond_edges:
+            target = self.graph_service.get_node(ce.target)
+            jump_edges_meta.append({
+                **ce.model_dump(),
+                "target_name": target.name if target else ce.target,
+                "target_level": target.level if target else 0,
+            })
+
+        # ---- Build node dicts with parent info ----
+        result_nodes = []
+        for n in nodes:
+            nd = n.model_dump()
+            parents = self.graph_service.get_parents(n.id)
+            nd["parents"] = [
+                {"id": p.id, "name": p.name, "level": p.level}
+                for p in parents
+            ]
+            result_nodes.append(nd)
 
         return {
-            "nodes": [n.model_dump() for n in nodes],
+            "nodes": result_nodes,
             "edges": [e.model_dump() for e in edges],
             "conditional_edges": [ce.model_dump() for ce in satisfied_within],
-            "jump_edges": all_cond,
+            "ghost_nodes": ghost_nodes,
+            "ghost_conditional_edges": [ce.model_dump() for ce in ghost_cond_edges],
+            "jump_edges": jump_edges_meta,
+            "nav_parent": nav_parent,
             "state": merged,
             "state_stack": [f.model_dump() for f in self.state_manager.get_stack()],
             "nav_stack": self._build_nav_info(),
@@ -311,13 +345,18 @@ class TraversalEngine:
         """
         Navigate into a node: push it onto the stack,
         accumulate its state, show its children as a level view.
+        Only children at exactly (parent.level + 1) are shown;
+        cross-level normal edges are filtered out.
         Raises ValueError if node has no children (leaf node).
         """
         node = self.graph_service.get_node(node_id)
         if node is None:
             raise ValueError(f"Node '{node_id}' not found")
 
-        children = self.graph_service.get_children(node_id)
+        target_level = node.level + 1
+        all_children = self.graph_service.get_children(node_id)
+        # Strict level filtering: only children at the expected level
+        children = [c for c in all_children if c.level == target_level]
         if not children:
             raise ValueError(f"Node '{node.name}' has no sub-levels to explore")
 
@@ -326,7 +365,7 @@ class TraversalEngine:
         if node.state:
             self.state_manager.push(node_id, node.state)
 
-        self.current_level = node.level + 1
+        self.current_level = target_level
 
         return self._build_level_view(children)
 
@@ -344,8 +383,11 @@ class TraversalEngine:
         # Rebuild view for current top of stack
         parent_id = self.nav_stack[-1]
         parent = self.graph_service.get_node(parent_id)
-        children = self.graph_service.get_children(parent_id)
-        self.current_level = parent.level + 1 if parent else 1
+        target_level = parent.level + 1 if parent else 1
+        all_children = self.graph_service.get_children(parent_id)
+        # Strict level filtering: only children at the expected level
+        children = [c for c in all_children if c.level == target_level]
+        self.current_level = target_level
 
         return self._build_level_view(children)
 
@@ -384,3 +426,87 @@ class TraversalEngine:
                 self.state_manager.push(source_id, source.state)
 
         return self.enter_node(target_id)
+
+    # ------------------------------------------------------------------ #
+    #  Breadcrumb Navigation (jump to any point in nav stack)
+    # ------------------------------------------------------------------ #
+
+    def navigate_to(self, node_id: str) -> Dict[str, Any]:
+        """
+        Navigate to a specific node in the nav stack (breadcrumb click).
+        Pops everything after that node and shows its children.
+        """
+        if node_id not in self.nav_stack:
+            raise ValueError(f"Node '{node_id}' is not in the navigation stack")
+
+        # Find index of target in nav stack
+        target_idx = self.nav_stack.index(node_id)
+
+        # Pop everything after the target (in reverse to properly clean state)
+        while len(self.nav_stack) > target_idx + 1:
+            popped_id = self.nav_stack.pop()
+            self.state_manager.pop(popped_id)
+
+        # Now nav_stack ends with node_id — show its children
+        node = self.graph_service.get_node(node_id)
+        if node is None:
+            raise ValueError(f"Node '{node_id}' not found")
+
+        target_level = node.level + 1
+        all_children = self.graph_service.get_children(node_id)
+        children = [c for c in all_children if c.level == target_level]
+
+        if not children:
+            raise ValueError(f"Node '{node.name}' has no sub-levels to explore")
+
+        self.current_level = target_level
+        return self._build_level_view(children)
+
+    # ------------------------------------------------------------------ #
+    #  Switch Parent (exit node → rebuild entire trace)
+    # ------------------------------------------------------------------ #
+
+    def switch_parent(self, new_parent_id: str) -> Dict[str, Any]:
+        """
+        Switch to a different parent: rebuild the entire nav stack
+        through the new parent and show its children.
+
+        This is called when a user clicks a dynamic exit node.
+        The trace is rebuilt by finding a path from root to new_parent_id.
+        """
+        new_parent = self.graph_service.get_node(new_parent_id)
+        if new_parent is None:
+            raise ValueError(f"Parent node '{new_parent_id}' not found")
+
+        # Find path from root to new_parent
+        path = self.graph_service.get_path_to_root(new_parent_id)
+        if not path:
+            raise ValueError(
+                f"Cannot find a path from root to '{new_parent.name}'"
+            )
+
+        # Clear current nav state completely
+        self.nav_stack.clear()
+        self.state_manager.clear()
+
+        # Rebuild nav stack along the new path
+        for nid in path:
+            node = self.graph_service.get_node(nid)
+            if node:
+                self.nav_stack.append(nid)
+                if node.state:
+                    self.state_manager.push(nid, node.state)
+
+        # Show children of the new parent
+        target_level = new_parent.level + 1
+        all_children = self.graph_service.get_children(new_parent_id)
+        children = [c for c in all_children if c.level == target_level]
+
+        if not children:
+            raise ValueError(
+                f"Parent '{new_parent.name}' has no children to display"
+            )
+
+        self.current_level = target_level
+        return self._build_level_view(children)
+

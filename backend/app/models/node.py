@@ -9,5 +9,6 @@ class Node(BaseModel):
     name: str
     level: int
     state: Dict[str, Any] = Field(default_factory=dict)
+    properties: Dict[str, Any] = Field(default_factory=dict)
     is_exit_node: bool = False
     exit_for: Optional[str] = None  # Which node expansion this exit belongs to

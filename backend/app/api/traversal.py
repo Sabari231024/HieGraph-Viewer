@@ -106,3 +106,41 @@ def get_full_graph(session_id: str = Query(default=None)):
     result = engine.get_full_graph()
     result["session_id"] = session_id
     return result
+
+
+@router.post("/navigate-to/{node_id}")
+def navigate_to(node_id: str, session_id: str = Query(...)):
+    """
+    Navigate to a specific point in the breadcrumb (nav stack).
+    Pops everything after that node and shows its children.
+    """
+    if session_id not in session_store:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    engine = session_store[session_id]
+    try:
+        result = engine.navigate_to(node_id)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return result
+
+
+@router.post("/switch-parent/{parent_id}")
+def switch_parent(parent_id: str, session_id: str = Query(...)):
+    """
+    Switch to a different parent: rebuild the entire nav stack
+    through the alternate parent and show its children.
+    Called when a user clicks a dynamic exit node.
+    """
+    if session_id not in session_store:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    engine = session_store[session_id]
+    try:
+        result = engine.switch_parent(parent_id)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return result
+

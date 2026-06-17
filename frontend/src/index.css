@@ -1,5 +1,5 @@
 /* ================================================================== */
-/*  Graph Explorer – Neo4j Dark Theme                                 */
+/*  Graph Explorer – Neo4j Dark Theme  (Enhanced)                     */
 /* ================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -8,11 +8,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg-primary:   #0d1117;
-  --bg-secondary: #161b22;
-  --bg-surface:   #1c2128;
-  --bg-elevated:  #21262d;
-  --border:       #30363d;
+  --bg-primary:   #0a0e14;
+  --bg-secondary: #12171f;
+  --bg-surface:   #181e28;
+  --bg-elevated:  #1e2530;
+  --border:       #2a3140;
   --border-glow:  #4c8bf533;
   --text-primary: #e6edf3;
   --text-secondary:#8b949e;
@@ -24,8 +24,9 @@
   --red:          #ef5350;
   --green:        #34a853;
   --orange:       #f9a825;
-  --radius:       10px;
-  --radius-sm:    6px;
+  --radius:       12px;
+  --radius-sm:    8px;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html, body, #root {
@@ -54,10 +55,12 @@ html, body, #root {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 24px;
-  background: var(--bg-secondary);
+  padding: 12px 24px;
+  background: linear-gradient(180deg, rgba(18,23,31,0.98), rgba(18,23,31,0.92));
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
+  z-index: 20;
 }
 
 .header-left {
@@ -87,31 +90,53 @@ html, body, #root {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-/* ---- Back Button ---- */
-.back-button {
+/* ---- Buttons ---- */
+.back-button,
+.fullgraph-button {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 16px;
+  padding: 7px 18px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   color: var(--text-primary);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s var(--transition-smooth);
   font-family: 'Inter', sans-serif;
+  white-space: nowrap;
 }
 
 .back-button:hover {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
-  box-shadow: 0 0 16px var(--accent-glow);
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.fullgraph-button {
+  background: linear-gradient(135deg, #1a2a40, #162030);
+  border-color: var(--accent);
+}
+
+.fullgraph-button:hover {
+  background: linear-gradient(135deg, var(--accent), #3a6fd8);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 24px var(--accent-glow), 0 4px 12px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
+
+.fullgraph-button.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .loading-indicator {
@@ -145,7 +170,8 @@ html, body, #root {
   align-items: center;
   gap: 4px;
   padding: 8px 24px;
-  background: var(--bg-primary);
+  background: rgba(10, 14, 20, 0.85);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
   min-height: 36px;
@@ -161,7 +187,7 @@ html, body, #root {
   cursor: pointer;
   padding: 2px 8px;
   border-radius: 4px;
-  transition: all 0.15s ease;
+  transition: all 0.2s var(--transition-smooth);
   font-family: 'Inter', sans-serif;
   white-space: nowrap;
 }
@@ -214,6 +240,37 @@ html, body, #root {
   white-space: nowrap;
 }
 
+.breadcrumb-item--clickable {
+  color: var(--text-secondary);
+  cursor: pointer;
+  position: relative;
+}
+
+.breadcrumb-item--clickable:hover {
+  color: var(--accent);
+  background: rgba(76, 139, 245, 0.12);
+  text-decoration: none;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.breadcrumb-item--clickable:active {
+  transform: scale(0.96);
+}
+
+.breadcrumb-level-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(76, 139, 245, 0.15);
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-right: 5px;
+  letter-spacing: 0.3px;
+  font-family: 'JetBrains Mono', monospace;
+  vertical-align: middle;
+}
+
 /* ---- Body ---- */
 .explorer-body {
   display: flex;
@@ -235,7 +292,8 @@ html, body, #root {
   transform: translateX(-50%);
   font-size: 11px;
   color: var(--text-muted);
-  background: var(--bg-elevated);
+  background: rgba(30, 37, 48, 0.85);
+  backdrop-filter: blur(8px);
   padding: 6px 16px;
   border-radius: 20px;
   border: 1px solid var(--border);
@@ -248,7 +306,7 @@ html, body, #root {
 .side-panel {
   width: 320px;
   flex-shrink: 0;
-  background: var(--bg-secondary);
+  background: linear-gradient(180deg, var(--bg-secondary), rgba(12,16,22,0.98));
   border-left: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -256,7 +314,7 @@ html, body, #root {
 }
 
 /* ================================================================== */
-/*  Neo4j-Style Nodes                                                 */
+/*  Neo4j-Style Nodes  (LARGER: 130px)                                */
 /* ================================================================== */
 
 .neo-node {
@@ -265,12 +323,12 @@ html, body, #root {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: transform 0.3s var(--transition-smooth), filter 0.3s var(--transition-smooth);
 }
 
 .neo-node:hover {
-  transform: scale(1.08);
-  filter: brightness(1.15);
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
 .neo-node-ring {
@@ -278,23 +336,24 @@ html, body, #root {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 90px;
-  height: 90px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  border: 3px solid var(--node-border, #4c8bf5);
+  border: 3.5px solid var(--node-border, #4c8bf5);
   background: var(--node-bg, #1a2332);
   box-shadow:
-    0 0 20px var(--node-glow, #4c8bf544),
-    inset 0 0 20px rgba(0,0,0,0.4);
-  transition: all 0.3s ease;
+    0 0 28px var(--node-glow, #4c8bf544),
+    0 0 56px var(--node-glow, #4c8bf522),
+    inset 0 0 24px rgba(0,0,0,0.4);
+  transition: all 0.35s var(--transition-smooth);
 }
 
 .neo-node:hover .neo-node-ring {
   box-shadow:
-    0 0 30px var(--node-glow, #4c8bf544),
-    0 0 60px var(--node-glow, #4c8bf544),
-    inset 0 0 20px rgba(0,0,0,0.3);
-  border-width: 4px;
+    0 0 40px var(--node-glow, #4c8bf566),
+    0 0 80px var(--node-glow, #4c8bf533),
+    inset 0 0 24px rgba(0,0,0,0.3);
+  border-width: 4.5px;
 }
 
 .neo-node-ring--pulse {
@@ -302,20 +361,20 @@ html, body, #root {
 }
 
 @keyframes neo-pulse {
-  0%, 100% { box-shadow: 0 0 20px var(--node-glow, #f9a82544), inset 0 0 20px rgba(0,0,0,0.4); }
-  50%      { box-shadow: 0 0 35px var(--node-glow, #f9a82544), 0 0 60px var(--node-glow, #f9a82522), inset 0 0 20px rgba(0,0,0,0.3); }
+  0%, 100% { box-shadow: 0 0 28px var(--node-glow, #f9a82544), 0 0 56px var(--node-glow, #f9a82522), inset 0 0 24px rgba(0,0,0,0.4); }
+  50%      { box-shadow: 0 0 44px var(--node-glow, #f9a82566), 0 0 80px var(--node-glow, #f9a82533), inset 0 0 24px rgba(0,0,0,0.3); }
 }
 
 .neo-node-ring--exit {
   border-color: var(--red);
   background: linear-gradient(135deg, #3a1010, #1a0808);
-  box-shadow: 0 0 20px rgba(239, 83, 80, 0.3), inset 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 28px rgba(239, 83, 80, 0.35), inset 0 0 24px rgba(0,0,0,0.5);
   animation: neo-exit-pulse 2s ease-in-out infinite;
 }
 
 @keyframes neo-exit-pulse {
-  0%, 100% { box-shadow: 0 0 16px rgba(239, 83, 80, 0.2), inset 0 0 20px rgba(0,0,0,0.5); }
-  50%      { box-shadow: 0 0 28px rgba(239, 83, 80, 0.5), inset 0 0 20px rgba(0,0,0,0.4); }
+  0%, 100% { box-shadow: 0 0 20px rgba(239, 83, 80, 0.25), inset 0 0 24px rgba(0,0,0,0.5); }
+  50%      { box-shadow: 0 0 36px rgba(239, 83, 80, 0.55), inset 0 0 24px rgba(0,0,0,0.4); }
 }
 
 .neo-node-content {
@@ -325,18 +384,18 @@ html, body, #root {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90px;
-  height: 90px;
+  width: 130px;
+  height: 130px;
   text-align: center;
-  padding: 8px;
+  padding: 12px;
 }
 
 .neo-node-label {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--node-text, #e8f0fe);
-  line-height: 1.2;
-  max-width: 80px;
+  line-height: 1.25;
+  max-width: 110px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -346,16 +405,16 @@ html, body, #root {
 
 .neo-node-badge {
   position: absolute;
-  bottom: -4px;
-  font-size: 8px;
+  bottom: -6px;
+  font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--node-border, #4c8bf5);
   background: var(--bg-primary);
-  padding: 1px 8px;
-  border-radius: 8px;
-  border: 1px solid var(--node-border, #4c8bf5);
+  padding: 2px 10px;
+  border-radius: 10px;
+  border: 1.5px solid var(--node-border, #4c8bf5);
 }
 
 .neo-node-badge--state {
@@ -364,13 +423,13 @@ html, body, #root {
 }
 
 .neo-exit-icon {
-  font-size: 22px;
+  font-size: 28px;
   color: var(--red);
   margin-bottom: 2px;
 }
 
 .neo-node--exit .neo-node-label {
-  font-size: 9px;
+  font-size: 10px;
   color: #ffcdd2;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -379,25 +438,26 @@ html, body, #root {
 /* State chip below conditional nodes */
 .neo-node-state-chip {
   position: absolute;
-  top: 96px;
+  top: 136px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 4px 8px;
+  border-radius: 8px;
+  padding: 5px 10px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-width: 100px;
+  gap: 3px;
+  min-width: 110px;
   z-index: 2;
+  backdrop-filter: blur(8px);
 }
 
 .neo-state-entry {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  font-size: 9px;
+  font-size: 10px;
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -412,11 +472,16 @@ html, body, #root {
 
 /* ---- Neo4j Handle ---- */
 .neo-handle {
-  width: 8px !important;
-  height: 8px !important;
+  width: 10px !important;
+  height: 10px !important;
   background: var(--node-border, #4c8bf5) !important;
   border: 2px solid var(--bg-primary) !important;
   border-radius: 50% !important;
+  transition: transform 0.2s ease !important;
+}
+
+.neo-handle:hover {
+  transform: scale(1.4) !important;
 }
 
 /* ================================================================== */
@@ -424,11 +489,11 @@ html, body, #root {
 /* ================================================================== */
 
 .neo-edge-label {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
   font-family: 'JetBrains Mono', monospace;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
   white-space: nowrap;
   z-index: 5;
 }
@@ -436,8 +501,9 @@ html, body, #root {
 .neo-edge-label--condition {
   color: #ce93d8;
   background: rgba(26, 26, 46, 0.95);
-  border: 1px solid #ab47bc44;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  border: 1px solid #ab47bc55;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
 }
 
 /* ================================================================== */
@@ -489,7 +555,7 @@ html, body, #root {
   border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s var(--transition-smooth);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -526,6 +592,11 @@ html, body, #root {
   background: var(--bg-surface);
   border-radius: var(--radius-sm);
   font-size: 12px;
+  transition: background 0.2s ease;
+}
+
+.state-row:hover {
+  background: var(--bg-elevated);
 }
 
 .state-key {
@@ -573,6 +644,11 @@ html, body, #root {
   background: var(--bg-surface);
   border-radius: var(--radius-sm);
   font-size: 11px;
+  transition: background 0.2s ease;
+}
+
+.traversal-item:hover {
+  background: var(--bg-elevated);
 }
 
 .traversal-index {
@@ -609,6 +685,11 @@ html, body, #root {
   background: var(--bg-surface);
   border-radius: var(--radius-sm);
   font-size: 12px;
+  transition: background 0.2s ease;
+}
+
+.inspector-row:hover {
+  background: var(--bg-elevated);
 }
 
 .inspector-label {
@@ -667,6 +748,11 @@ html, body, #root {
   border-left: 3px solid var(--purple);
   border-radius: var(--radius-sm);
   padding: 10px 12px;
+  transition: background 0.2s ease;
+}
+
+.condition-card:hover {
+  background: var(--bg-elevated);
 }
 
 .condition-route {
@@ -753,21 +839,28 @@ html, body, #root {
 
 /* ---- ReactFlow overrides ---- */
 .react-flow__node {
-  transition: transform 0.3s ease !important;
+  transition: transform 0.4s var(--transition-smooth) !important;
 }
 
 .react-flow__edge-path {
-  transition: stroke 0.2s ease;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
 }
 
 .react-flow__controls button {
   background: var(--bg-elevated) !important;
   border-color: var(--border) !important;
   color: var(--text-secondary) !important;
+  transition: all 0.2s ease !important;
 }
 
 .react-flow__controls button:hover {
   background: var(--bg-surface) !important;
+  color: var(--accent) !important;
+}
+
+/* Smooth panning */
+.react-flow__viewport {
+  transition: transform 0.15s var(--transition-smooth) !important;
 }
 
 /* ---- Scrollbar ---- */
@@ -787,3 +880,187 @@ html, body, #root {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* ================================================================== */
+/*  Ghost Nodes (faded conditional targets & exit nodes)              */
+/* ================================================================== */
+
+.neo-node--ghost {
+  opacity: 0.35;
+  filter: saturate(0.5);
+  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.3s var(--transition-smooth);
+}
+
+.neo-node--ghost:hover {
+  opacity: 0.65;
+  filter: saturate(0.8);
+  transform: scale(1.05);
+}
+
+.neo-node--ghost .neo-node-ring {
+  border-style: dashed;
+}
+
+/* ================================================================== */
+/*  Property Badge on Nodes                                           */
+/* ================================================================== */
+
+.neo-node-prop-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  z-index: 3;
+  white-space: nowrap;
+}
+
+/* ================================================================== */
+/*  Intra Edge Label                                                  */
+/* ================================================================== */
+
+.neo-edge-label--intra {
+  color: #80deea;
+  background: rgba(10, 26, 30, 0.92);
+  border: 1px solid #26c6da44;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* ================================================================== */
+/*  Search Bar                                                        */
+/* ================================================================== */
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 14px;
+  width: 100%;
+  max-width: 360px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-bar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.search-icon {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-clear {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.search-clear:hover {
+  color: var(--red);
+}
+
+/* ================================================================== */
+/*  Edge Legend                                                       */
+/* ================================================================== */
+
+.edge-legend {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(18, 23, 31, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.legend-line {
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.legend-line--normal {
+  background: #5a9aff;
+}
+
+.legend-line--intra {
+  background: #26c6da;
+  background-image: repeating-linear-gradient(
+    90deg, #26c6da 0, #26c6da 6px, transparent 6px, transparent 10px
+  );
+}
+
+.legend-line--conditional {
+  background: #c060dd;
+  background-image: repeating-linear-gradient(
+    90deg, #c060dd 0, #c060dd 8px, transparent 8px, transparent 12px
+  );
+}
+
+.legend-line--exit {
+  background: #ff5555;
+  background-image: repeating-linear-gradient(
+    90deg, #ff5555 0, #ff5555 5px, transparent 5px, transparent 9px
+  );
+}
+

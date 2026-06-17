@@ -1,233 +1,2374 @@
 {
     "nodes": [
-        {"id": "L1_RESEARCH", "name": "Research", "level": 1, "state": {}},
-        {"id": "L1_HEALTHCARE", "name": "Healthcare", "level": 1, "state": {}},
-        {"id": "L1_EDUCATION", "name": "Education", "level": 1, "state": {}},
-        {"id": "L1_FINANCE", "name": "Finance", "level": 1, "state": {}},
-        {"id": "L1_ENGINEERING", "name": "Engineering", "level": 1, "state": {}},
-        {"id": "L1_CREATIVE", "name": "Creative Arts", "level": 1, "state": {}},
-
-        {"id": "L2_AI", "name": "Artificial Intelligence", "level": 2, "state": {}},
-        {"id": "L2_DS", "name": "Data Science", "level": 2, "state": {}},
-        {"id": "L2_QUANTUM", "name": "Quantum Computing", "level": 2, "state": {}},
-        {"id": "L2_CLINICAL", "name": "Clinical Systems", "level": 2, "state": {}},
-        {"id": "L2_BIO", "name": "Bioinformatics", "level": 2, "state": {}},
-        {"id": "L2_PHARMA", "name": "Pharmacology", "level": 2, "state": {}},
-        {"id": "L2_LEARNING", "name": "Learning Systems", "level": 2, "state": {}},
-        {"id": "L2_ASSESSMENT", "name": "Assessment", "level": 2, "state": {}},
-        {"id": "L2_CURRICULUM", "name": "Curriculum Design", "level": 2, "state": {}},
-        {"id": "L2_ALGO_TRADING", "name": "Algorithmic Trading", "level": 2, "state": {}},
-        {"id": "L2_RISK", "name": "Risk Management", "level": 2, "state": {}},
-        {"id": "L2_BLOCKCHAIN", "name": "Blockchain", "level": 2, "state": {}},
-        {"id": "L2_ROBOTICS", "name": "Robotics", "level": 2, "state": {}},
-        {"id": "L2_MATERIALS", "name": "Materials Science", "level": 2, "state": {}},
-        {"id": "L2_AEROSPACE", "name": "Aerospace", "level": 2, "state": {}},
-        {"id": "L2_GENART", "name": "Generative Art", "level": 2, "state": {}},
-        {"id": "L2_MUSIC", "name": "Music Production", "level": 2, "state": {}},
-        {"id": "L2_FILM", "name": "Film & VFX", "level": 2, "state": {}},
-
-        {"id": "L3_ML", "name": "Machine Learning", "level": 3, "state": {}},
-        {"id": "L3_DL", "name": "Deep Learning", "level": 3, "state": {}},
-        {"id": "L3_NLP", "name": "Natural Language Processing", "level": 3, "state": {}},
-        {"id": "L3_STATS", "name": "Statistics", "level": 3, "state": {}},
-        {"id": "L3_ANALYTICS", "name": "Analytics", "level": 3, "state": {}},
-        {"id": "L3_VIZ", "name": "Data Visualization", "level": 3, "state": {}},
-        {"id": "L3_QUBITS", "name": "Qubit Systems", "level": 3, "state": {}},
-        {"id": "L3_QALGO", "name": "Quantum Algorithms", "level": 3, "state": {}},
-        {"id": "L3_DIAGNOSIS", "name": "Diagnosis", "level": 3, "state": {}},
-        {"id": "L3_TREATMENT", "name": "Treatment Planning", "level": 3, "state": {}},
-        {"id": "L3_IMAGING", "name": "Medical Imaging", "level": 3, "state": {}},
-        {"id": "L3_GENOMICS", "name": "Genomics", "level": 3, "state": {}},
-        {"id": "L3_PROTEOMICS", "name": "Proteomics", "level": 3, "state": {}},
-        {"id": "L3_DRUG_DESIGN", "name": "Drug Design", "level": 3, "state": {}},
-        {"id": "L3_CLINICAL_TRIALS", "name": "Clinical Trials", "level": 3, "state": {}},
-        {"id": "L3_HFT", "name": "High-Freq Trading", "level": 3, "state": {}},
-        {"id": "L3_PORTFOLIO", "name": "Portfolio Optimization", "level": 3, "state": {}},
-        {"id": "L3_CREDIT_RISK", "name": "Credit Risk", "level": 3, "state": {}},
-        {"id": "L3_MARKET_RISK", "name": "Market Risk", "level": 3, "state": {}},
-        {"id": "L3_DEFI", "name": "DeFi Protocols", "level": 3, "state": {}},
-        {"id": "L3_SMART_CONTRACTS", "name": "Smart Contracts", "level": 3, "state": {}},
-        {"id": "L3_PERCEPTION", "name": "Perception", "level": 3, "state": {}},
-        {"id": "L3_CONTROL", "name": "Control Systems", "level": 3, "state": {}},
-        {"id": "L3_SWARM", "name": "Swarm Intelligence", "level": 3, "state": {}},
-        {"id": "L3_COMPOSITES", "name": "Composites", "level": 3, "state": {}},
-        {"id": "L3_NANOMATERIALS", "name": "Nanomaterials", "level": 3, "state": {}},
-        {"id": "L3_PROPULSION", "name": "Propulsion", "level": 3, "state": {}},
-        {"id": "L3_AVIONICS", "name": "Avionics", "level": 3, "state": {}},
-        {"id": "L3_NEURAL_STYLE", "name": "Neural Style Transfer", "level": 3, "state": {}},
-        {"id": "L3_PROCEDURAL", "name": "Procedural Generation", "level": 3, "state": {}},
-        {"id": "L3_SYNTHESIS", "name": "Audio Synthesis", "level": 3, "state": {}},
-        {"id": "L3_COMPOSITION", "name": "AI Composition", "level": 3, "state": {}},
-        {"id": "L3_RENDERING", "name": "Real-time Rendering", "level": 3, "state": {}},
-        {"id": "L3_MOCAP", "name": "Motion Capture", "level": 3, "state": {}},
-
-        {"id": "L4_TRANSFORMER", "name": "Transformers", "level": 4, "state": {"experience": 3, "attention": true}},
-        {"id": "L4_GNN", "name": "Graph Neural Networks", "level": 4, "state": {"graph_knowledge": true}},
-        {"id": "L4_CNN", "name": "CNN", "level": 4, "state": {"vision_skill": 5}},
-        {"id": "L4_DIFFUSION", "name": "Diffusion Models", "level": 4, "state": {"generation_skill": 7}},
-        {"id": "L4_BAYES", "name": "Bayesian Learning", "level": 4, "state": {"probability": 8}},
-        {"id": "L4_LLM", "name": "Large Language Models", "level": 4, "state": {"language_skill": 9}},
-        {"id": "L4_CLINICAL_REASONING", "name": "Clinical Reasoning", "level": 4, "state": {"medical_knowledge": 9}},
-        {"id": "L4_SEQUENCE_ANALYSIS", "name": "Sequence Analysis", "level": 4, "state": {"biology_knowledge": 7}},
-        {"id": "L4_MONTE_CARLO", "name": "Monte Carlo Methods", "level": 4, "state": {"simulation_depth": 6}},
-        {"id": "L4_REINFORCEMENT", "name": "Reinforcement Learning", "level": 4, "state": {"rl_skill": 8}},
-        {"id": "L4_LIDAR", "name": "LiDAR Processing", "level": 4, "state": {"spatial_skill": 7}},
-        {"id": "L4_GAN", "name": "GANs", "level": 4, "state": {"creativity_skill": 8}},
-        {"id": "L4_VAE", "name": "Variational Autoencoders", "level": 4, "state": {"latent_skill": 6}},
-        {"id": "L4_NERF", "name": "Neural Radiance Fields", "level": 4, "state": {"rendering_skill": 9}},
-
-        {"id": "L5_AGENTS", "name": "Agent Systems", "level": 5, "state": {"agent_skill": 10}},
-        {"id": "L5_WORLD", "name": "World Models", "level": 5, "state": {"simulation_skill": 7}},
-        {"id": "L5_HOPFIELD", "name": "Modern Hopfield Networks", "level": 5, "state": {"memory_skill": 9}},
-        {"id": "L5_CAUSAL", "name": "Causal Discovery", "level": 5, "state": {"causal_skill": 6}},
-        {"id": "L5_DRUG_DISCOVERY", "name": "Drug Discovery", "level": 5, "state": {"drug_design": 5}},
-        {"id": "L5_PERSONALIZED_MED", "name": "Personalized Medicine", "level": 5, "state": {"precision_medicine": 8}},
-        {"id": "L5_SCI_DISCOVERY", "name": "Scientific Discovery", "level": 5, "state": {"research_skill": 8}},
-        {"id": "L5_EQUATION_DISCOVERY", "name": "Equation Discovery", "level": 5, "state": {}},
-        {"id": "L5_AUTONOMOUS_RESEARCH", "name": "Autonomous Research", "level": 5, "state": {}},
-        {"id": "L5_QUANTUM_ML", "name": "Quantum Machine Learning", "level": 5, "state": {"quantum_skill": 7}},
-        {"id": "L5_AGI_SAFETY", "name": "AGI Safety", "level": 5, "state": {"alignment_skill": 9}},
-        {"id": "L5_DIGITAL_TWIN", "name": "Digital Twins", "level": 5, "state": {"twin_fidelity": 8}},
-        {"id": "L5_AUTONOMOUS_VEH", "name": "Autonomous Vehicles", "level": 5, "state": {"autonomy_level": 4}},
-        {"id": "L5_SPACE_AI", "name": "Space AI Systems", "level": 5, "state": {"space_readiness": 6}},
-
-        {"id": "L6_SUPERINTELLIGENCE", "name": "Superintelligence Research", "level": 6, "state": {"frontier": true}},
-        {"id": "L6_CONSCIOUSNESS", "name": "Artificial Consciousness", "level": 6, "state": {"philosophy_depth": 10}},
-        {"id": "L6_SELF_IMPROVING", "name": "Self-Improving Systems", "level": 6, "state": {"recursion_depth": 7}},
-        {"id": "L6_MARS_COLONY", "name": "Mars Colony AI", "level": 6, "state": {"colony_readiness": 3}},
-        {"id": "L6_FUSION_CONTROL", "name": "Fusion Reactor Control", "level": 6, "state": {"plasma_skill": 8}},
-        {"id": "L6_UNIVERSAL_CURE", "name": "Universal Cure Engine", "level": 6, "state": {"cure_progress": 2}}
+        {
+            "id": "L1_RESEARCH",
+            "name": "Research",
+            "level": 1,
+            "state": {},
+            "properties": {
+                "description": "Scientific research",
+                "status": "active",
+                "maturity": 9,
+                "domain": "academia"
+            }
+        },
+        {
+            "id": "L1_HEALTHCARE",
+            "name": "Healthcare",
+            "level": 1,
+            "state": {},
+            "properties": {
+                "description": "Healthcare systems",
+                "status": "active",
+                "maturity": 8,
+                "domain": "medical"
+            }
+        },
+        {
+            "id": "L1_EDUCATION",
+            "name": "Education",
+            "level": 1,
+            "state": {},
+            "properties": {
+                "description": "Education systems",
+                "status": "active",
+                "maturity": 8,
+                "domain": "education"
+            }
+        },
+        {
+            "id": "L1_FINANCE",
+            "name": "Finance",
+            "level": 1,
+            "state": {},
+            "properties": {
+                "description": "Financial systems",
+                "status": "active",
+                "maturity": 9,
+                "domain": "fintech"
+            }
+        },
+        {
+            "id": "L1_ENGINEERING",
+            "name": "Engineering",
+            "level": 1,
+            "state": {},
+            "properties": {
+                "description": "Engineering disciplines",
+                "status": "active",
+                "maturity": 9,
+                "domain": "engineering"
+            }
+        },
+        {
+            "id": "L1_CREATIVE",
+            "name": "Creative Arts",
+            "level": 1,
+            "state": {},
+            "properties": {
+                "description": "Creative arts & media",
+                "status": "active",
+                "maturity": 7,
+                "domain": "creative"
+            }
+        },
+        {
+            "id": "L2_AI",
+            "name": "Artificial Intelligence",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "AI research",
+                "status": "active",
+                "maturity": 8,
+                "tools": [
+                    "PyTorch",
+                    "TensorFlow"
+                ]
+            }
+        },
+        {
+            "id": "L2_DS",
+            "name": "Data Science",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Data science",
+                "status": "active",
+                "maturity": 9,
+                "tools": [
+                    "Pandas",
+                    "Spark"
+                ]
+            }
+        },
+        {
+            "id": "L2_QUANTUM",
+            "name": "Quantum Computing",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Quantum computing",
+                "status": "experimental",
+                "maturity": 4,
+                "tools": [
+                    "Qiskit"
+                ]
+            }
+        },
+        {
+            "id": "L2_CLINICAL",
+            "name": "Clinical Systems",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Clinical systems",
+                "status": "active",
+                "maturity": 7,
+                "domain": "hospital"
+            }
+        },
+        {
+            "id": "L2_BIO",
+            "name": "Bioinformatics",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Bioinformatics",
+                "status": "active",
+                "maturity": 6,
+                "tools": [
+                    "BLAST"
+                ]
+            }
+        },
+        {
+            "id": "L2_PHARMA",
+            "name": "Pharmacology",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Pharmacology",
+                "status": "active",
+                "maturity": 7,
+                "domain": "pharma"
+            }
+        },
+        {
+            "id": "L2_LEARNING",
+            "name": "Learning Systems",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "E-learning platforms",
+                "status": "active",
+                "maturity": 7
+            }
+        },
+        {
+            "id": "L2_ASSESSMENT",
+            "name": "Assessment",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Testing & grading",
+                "status": "active",
+                "maturity": 6
+            }
+        },
+        {
+            "id": "L2_CURRICULUM",
+            "name": "Curriculum Design",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Curriculum design",
+                "status": "active",
+                "maturity": 6
+            }
+        },
+        {
+            "id": "L2_ALGO_TRADING",
+            "name": "Algorithmic Trading",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Algorithmic trading",
+                "status": "active",
+                "maturity": 8
+            }
+        },
+        {
+            "id": "L2_RISK",
+            "name": "Risk Management",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Risk management",
+                "status": "active",
+                "maturity": 8
+            }
+        },
+        {
+            "id": "L2_BLOCKCHAIN",
+            "name": "Blockchain",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Blockchain tech",
+                "status": "active",
+                "maturity": 6
+            }
+        },
+        {
+            "id": "L2_ROBOTICS",
+            "name": "Robotics",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Robotics engineering",
+                "status": "active",
+                "maturity": 7
+            }
+        },
+        {
+            "id": "L2_MATERIALS",
+            "name": "Materials Science",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Materials science",
+                "status": "active",
+                "maturity": 7
+            }
+        },
+        {
+            "id": "L2_AEROSPACE",
+            "name": "Aerospace",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Aerospace engineering",
+                "status": "active",
+                "maturity": 8
+            }
+        },
+        {
+            "id": "L2_GENART",
+            "name": "Generative Art",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Generative art",
+                "status": "active",
+                "maturity": 6
+            }
+        },
+        {
+            "id": "L2_MUSIC",
+            "name": "Music Production",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Music production",
+                "status": "active",
+                "maturity": 6
+            }
+        },
+        {
+            "id": "L2_FILM",
+            "name": "Film & VFX",
+            "level": 2,
+            "state": {},
+            "properties": {
+                "description": "Film & VFX",
+                "status": "active",
+                "maturity": 7
+            }
+        },
+        {
+            "id": "L3_ML",
+            "name": "Machine Learning",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Machine Learning",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_DL",
+            "name": "Deep Learning",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Deep Learning",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_NLP",
+            "name": "Natural Language Processing",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Natural Language Processing",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_STATS",
+            "name": "Statistics",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Statistics",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_ANALYTICS",
+            "name": "Analytics",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Analytics",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_VIZ",
+            "name": "Data Visualization",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Data Visualization",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_QUBITS",
+            "name": "Qubit Systems",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Qubit Systems",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_QALGO",
+            "name": "Quantum Algorithms",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Quantum Algorithms",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_DIAGNOSIS",
+            "name": "Diagnosis",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Diagnosis",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_TREATMENT",
+            "name": "Treatment Planning",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Treatment Planning",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_IMAGING",
+            "name": "Medical Imaging",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Medical Imaging",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_GENOMICS",
+            "name": "Genomics",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Genomics",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_PROTEOMICS",
+            "name": "Proteomics",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Proteomics",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_DRUG_DESIGN",
+            "name": "Drug Design",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Drug Design",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_CLINICAL_TRIALS",
+            "name": "Clinical Trials",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Clinical Trials",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_HFT",
+            "name": "High-Freq Trading",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "High-Freq Trading",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_PORTFOLIO",
+            "name": "Portfolio Optimization",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Portfolio Optimization",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_CREDIT_RISK",
+            "name": "Credit Risk",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Credit Risk",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_MARKET_RISK",
+            "name": "Market Risk",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Market Risk",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_DEFI",
+            "name": "DeFi Protocols",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "DeFi Protocols",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_SMART_CONTRACTS",
+            "name": "Smart Contracts",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Smart Contracts",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_PERCEPTION",
+            "name": "Perception",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Perception",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_CONTROL",
+            "name": "Control Systems",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Control Systems",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_SWARM",
+            "name": "Swarm Intelligence",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Swarm Intelligence",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_COMPOSITES",
+            "name": "Composites",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Composites",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_NANOMATERIALS",
+            "name": "Nanomaterials",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Nanomaterials",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_PROPULSION",
+            "name": "Propulsion",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Propulsion",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_AVIONICS",
+            "name": "Avionics",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Avionics",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_NEURAL_STYLE",
+            "name": "Neural Style Transfer",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Neural Style Transfer",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_PROCEDURAL",
+            "name": "Procedural Generation",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Procedural Generation",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_SYNTHESIS",
+            "name": "Audio Synthesis",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Audio Synthesis",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_COMPOSITION",
+            "name": "AI Composition",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "AI Composition",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_RENDERING",
+            "name": "Real-time Rendering",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Real-time Rendering",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_MOCAP",
+            "name": "Motion Capture",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Motion Capture",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_TRANSFORMER",
+            "name": "Transformers",
+            "level": 4,
+            "state": {
+                "experience": 3,
+                "attention": true
+            },
+            "properties": {
+                "description": "Transformers",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_GNN",
+            "name": "Graph Neural Networks",
+            "level": 4,
+            "state": {
+                "graph_knowledge": true
+            },
+            "properties": {
+                "description": "Graph Neural Networks",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_CNN",
+            "name": "CNN",
+            "level": 4,
+            "state": {
+                "vision_skill": 5
+            },
+            "properties": {
+                "description": "CNN",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_DIFFUSION",
+            "name": "Diffusion Models",
+            "level": 4,
+            "state": {
+                "generation_skill": 7
+            },
+            "properties": {
+                "description": "Diffusion Models",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_BAYES",
+            "name": "Bayesian Learning",
+            "level": 4,
+            "state": {
+                "probability": 8
+            },
+            "properties": {
+                "description": "Bayesian Learning",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_LLM",
+            "name": "Large Language Models",
+            "level": 4,
+            "state": {
+                "language_skill": 9
+            },
+            "properties": {
+                "description": "Large Language Models",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_CLINICAL_REASONING",
+            "name": "Clinical Reasoning",
+            "level": 4,
+            "state": {
+                "medical_knowledge": 9
+            },
+            "properties": {
+                "description": "Clinical Reasoning",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_SEQUENCE_ANALYSIS",
+            "name": "Sequence Analysis",
+            "level": 4,
+            "state": {
+                "biology_knowledge": 7
+            },
+            "properties": {
+                "description": "Sequence Analysis",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_MONTE_CARLO",
+            "name": "Monte Carlo Methods",
+            "level": 4,
+            "state": {
+                "simulation_depth": 6
+            },
+            "properties": {
+                "description": "Monte Carlo Methods",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_REINFORCEMENT",
+            "name": "Reinforcement Learning",
+            "level": 4,
+            "state": {
+                "rl_skill": 8
+            },
+            "properties": {
+                "description": "Reinforcement Learning",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_LIDAR",
+            "name": "LiDAR Processing",
+            "level": 4,
+            "state": {
+                "spatial_skill": 7
+            },
+            "properties": {
+                "description": "LiDAR Processing",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_GAN",
+            "name": "GANs",
+            "level": 4,
+            "state": {
+                "creativity_skill": 8
+            },
+            "properties": {
+                "description": "GANs",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_VAE",
+            "name": "Variational Autoencoders",
+            "level": 4,
+            "state": {
+                "latent_skill": 6
+            },
+            "properties": {
+                "description": "Variational Autoencoders",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_NERF",
+            "name": "Neural Radiance Fields",
+            "level": 4,
+            "state": {
+                "rendering_skill": 9
+            },
+            "properties": {
+                "description": "Neural Radiance Fields",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_AGENTS",
+            "name": "Agent Systems",
+            "level": 5,
+            "state": {
+                "agent_skill": 10
+            },
+            "properties": {
+                "description": "Agent Systems",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_WORLD",
+            "name": "World Models",
+            "level": 5,
+            "state": {
+                "simulation_skill": 7
+            },
+            "properties": {
+                "description": "World Models",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_HOPFIELD",
+            "name": "Modern Hopfield Networks",
+            "level": 5,
+            "state": {
+                "memory_skill": 9
+            },
+            "properties": {
+                "description": "Modern Hopfield Networks",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_CAUSAL",
+            "name": "Causal Discovery",
+            "level": 5,
+            "state": {
+                "causal_skill": 6
+            },
+            "properties": {
+                "description": "Causal Discovery",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_DRUG_DISCOVERY",
+            "name": "Drug Discovery",
+            "level": 5,
+            "state": {
+                "drug_design": 5
+            },
+            "properties": {
+                "description": "Drug Discovery",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_PERSONALIZED_MED",
+            "name": "Personalized Medicine",
+            "level": 5,
+            "state": {
+                "precision_medicine": 8
+            },
+            "properties": {
+                "description": "Personalized Medicine",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_SCI_DISCOVERY",
+            "name": "Scientific Discovery",
+            "level": 5,
+            "state": {
+                "research_skill": 8
+            },
+            "properties": {
+                "description": "Scientific Discovery",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_EQUATION_DISCOVERY",
+            "name": "Equation Discovery",
+            "level": 5,
+            "state": {},
+            "properties": {
+                "description": "Equation Discovery",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_AUTONOMOUS_RESEARCH",
+            "name": "Autonomous Research",
+            "level": 5,
+            "state": {},
+            "properties": {
+                "description": "Autonomous Research",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_QUANTUM_ML",
+            "name": "Quantum Machine Learning",
+            "level": 5,
+            "state": {
+                "quantum_skill": 7
+            },
+            "properties": {
+                "description": "Quantum Machine Learning",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_AGI_SAFETY",
+            "name": "AGI Safety",
+            "level": 5,
+            "state": {
+                "alignment_skill": 9
+            },
+            "properties": {
+                "description": "AGI Safety",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_DIGITAL_TWIN",
+            "name": "Digital Twins",
+            "level": 5,
+            "state": {
+                "twin_fidelity": 8
+            },
+            "properties": {
+                "description": "Digital Twins",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_AUTONOMOUS_VEH",
+            "name": "Autonomous Vehicles",
+            "level": 5,
+            "state": {
+                "autonomy_level": 4
+            },
+            "properties": {
+                "description": "Autonomous Vehicles",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L5_SPACE_AI",
+            "name": "Space AI Systems",
+            "level": 5,
+            "state": {
+                "space_readiness": 6
+            },
+            "properties": {
+                "description": "Space AI Systems",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L6_SUPERINTELLIGENCE",
+            "name": "Superintelligence Research",
+            "level": 6,
+            "state": {
+                "frontier": true
+            },
+            "properties": {
+                "description": "Superintelligence Research",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L6_CONSCIOUSNESS",
+            "name": "Artificial Consciousness",
+            "level": 6,
+            "state": {
+                "philosophy_depth": 10
+            },
+            "properties": {
+                "description": "Artificial Consciousness",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L6_SELF_IMPROVING",
+            "name": "Self-Improving Systems",
+            "level": 6,
+            "state": {
+                "recursion_depth": 7
+            },
+            "properties": {
+                "description": "Self-Improving Systems",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L6_MARS_COLONY",
+            "name": "Mars Colony AI",
+            "level": 6,
+            "state": {
+                "colony_readiness": 3
+            },
+            "properties": {
+                "description": "Mars Colony AI",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L6_FUSION_CONTROL",
+            "name": "Fusion Reactor Control",
+            "level": 6,
+            "state": {
+                "plasma_skill": 8
+            },
+            "properties": {
+                "description": "Fusion Reactor Control",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L6_UNIVERSAL_CURE",
+            "name": "Universal Cure Engine",
+            "level": 6,
+            "state": {
+                "cure_progress": 2
+            },
+            "properties": {
+                "description": "Universal Cure Engine",
+                "status": "active",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L3_ADAPTIVE",
+            "name": "Adaptive Learning",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "Personalized learning paths",
+                "status": "active",
+                "maturity": 6
+            }
+        },
+        {
+            "id": "L3_EXAM_AI",
+            "name": "AI Examination",
+            "level": 3,
+            "state": {},
+            "properties": {
+                "description": "AI-powered assessment",
+                "status": "experimental",
+                "maturity": 4
+            }
+        },
+        {
+            "id": "L4_MAMBA",
+            "name": "Mamba / SSM",
+            "level": 4,
+            "state": {
+                "sequence_skill": 7
+            },
+            "properties": {
+                "description": "State space models",
+                "status": "experimental",
+                "maturity": 5
+            }
+        },
+        {
+            "id": "L4_FLOW",
+            "name": "Flow Matching",
+            "level": 4,
+            "state": {
+                "flow_skill": 6
+            },
+            "properties": {
+                "description": "Flow-based generation",
+                "status": "experimental",
+                "maturity": 4
+            }
+        },
+        {
+            "id": "L5_MULTIMODAL",
+            "name": "Multimodal AI",
+            "level": 5,
+            "state": {
+                "multimodal_skill": 8
+            },
+            "properties": {
+                "description": "Cross-modal understanding",
+                "status": "active",
+                "maturity": 7
+            }
+        },
+        {
+            "id": "L5_NEUROMORPHIC",
+            "name": "Neuromorphic Computing",
+            "level": 5,
+            "state": {
+                "neuro_skill": 5
+            },
+            "properties": {
+                "description": "Brain-inspired chips",
+                "status": "experimental",
+                "maturity": 4
+            }
+        },
+        {
+            "id": "L6_DYSON",
+            "name": "Dyson Sphere AI",
+            "level": 6,
+            "state": {
+                "energy_skill": 2
+            },
+            "properties": {
+                "description": "Megastructure control",
+                "status": "theoretical",
+                "maturity": 1
+            }
+        },
+        {
+            "id": "L7_OMEGA",
+            "name": "Omega Point",
+            "level": 7,
+            "state": {
+                "transcendence": 1
+            },
+            "properties": {
+                "description": "Ultimate convergence",
+                "status": "theoretical",
+                "maturity": 1
+            }
+        },
+        {
+            "id": "L7_SIMULATION",
+            "name": "Simulation Engine",
+            "level": 7,
+            "state": {
+                "sim_power": 1
+            },
+            "properties": {
+                "description": "Universe simulation",
+                "status": "theoretical",
+                "maturity": 1
+            }
+        }
     ],
     "edges": [
-        {"source": "L1_RESEARCH", "target": "L2_AI", "type": "NORMAL"},
-        {"source": "L1_RESEARCH", "target": "L2_DS", "type": "NORMAL"},
-        {"source": "L1_RESEARCH", "target": "L2_QUANTUM", "type": "NORMAL"},
-        {"source": "L1_HEALTHCARE", "target": "L2_CLINICAL", "type": "NORMAL"},
-        {"source": "L1_HEALTHCARE", "target": "L2_BIO", "type": "NORMAL"},
-        {"source": "L1_HEALTHCARE", "target": "L2_PHARMA", "type": "NORMAL"},
-        {"source": "L1_EDUCATION", "target": "L2_LEARNING", "type": "NORMAL"},
-        {"source": "L1_EDUCATION", "target": "L2_ASSESSMENT", "type": "NORMAL"},
-        {"source": "L1_EDUCATION", "target": "L2_CURRICULUM", "type": "NORMAL"},
-        {"source": "L1_FINANCE", "target": "L2_ALGO_TRADING", "type": "NORMAL"},
-        {"source": "L1_FINANCE", "target": "L2_RISK", "type": "NORMAL"},
-        {"source": "L1_FINANCE", "target": "L2_BLOCKCHAIN", "type": "NORMAL"},
-        {"source": "L1_ENGINEERING", "target": "L2_ROBOTICS", "type": "NORMAL"},
-        {"source": "L1_ENGINEERING", "target": "L2_MATERIALS", "type": "NORMAL"},
-        {"source": "L1_ENGINEERING", "target": "L2_AEROSPACE", "type": "NORMAL"},
-        {"source": "L1_CREATIVE", "target": "L2_GENART", "type": "NORMAL"},
-        {"source": "L1_CREATIVE", "target": "L2_MUSIC", "type": "NORMAL"},
-        {"source": "L1_CREATIVE", "target": "L2_FILM", "type": "NORMAL"},
-
-        {"source": "L2_AI", "target": "L3_ML", "type": "NORMAL"},
-        {"source": "L2_AI", "target": "L3_DL", "type": "NORMAL"},
-        {"source": "L2_AI", "target": "L3_NLP", "type": "NORMAL"},
-        {"source": "L2_DS", "target": "L3_STATS", "type": "NORMAL"},
-        {"source": "L2_DS", "target": "L3_ANALYTICS", "type": "NORMAL"},
-        {"source": "L2_DS", "target": "L3_VIZ", "type": "NORMAL"},
-        {"source": "L2_QUANTUM", "target": "L3_QUBITS", "type": "NORMAL"},
-        {"source": "L2_QUANTUM", "target": "L3_QALGO", "type": "NORMAL"},
-        {"source": "L2_CLINICAL", "target": "L3_DIAGNOSIS", "type": "NORMAL"},
-        {"source": "L2_CLINICAL", "target": "L3_TREATMENT", "type": "NORMAL"},
-        {"source": "L2_CLINICAL", "target": "L3_IMAGING", "type": "NORMAL"},
-        {"source": "L2_BIO", "target": "L3_GENOMICS", "type": "NORMAL"},
-        {"source": "L2_BIO", "target": "L3_PROTEOMICS", "type": "NORMAL"},
-        {"source": "L2_PHARMA", "target": "L3_DRUG_DESIGN", "type": "NORMAL"},
-        {"source": "L2_PHARMA", "target": "L3_CLINICAL_TRIALS", "type": "NORMAL"},
-        {"source": "L2_ALGO_TRADING", "target": "L3_HFT", "type": "NORMAL"},
-        {"source": "L2_ALGO_TRADING", "target": "L3_PORTFOLIO", "type": "NORMAL"},
-        {"source": "L2_RISK", "target": "L3_CREDIT_RISK", "type": "NORMAL"},
-        {"source": "L2_RISK", "target": "L3_MARKET_RISK", "type": "NORMAL"},
-        {"source": "L2_BLOCKCHAIN", "target": "L3_DEFI", "type": "NORMAL"},
-        {"source": "L2_BLOCKCHAIN", "target": "L3_SMART_CONTRACTS", "type": "NORMAL"},
-        {"source": "L2_ROBOTICS", "target": "L3_PERCEPTION", "type": "NORMAL"},
-        {"source": "L2_ROBOTICS", "target": "L3_CONTROL", "type": "NORMAL"},
-        {"source": "L2_ROBOTICS", "target": "L3_SWARM", "type": "NORMAL"},
-        {"source": "L2_MATERIALS", "target": "L3_COMPOSITES", "type": "NORMAL"},
-        {"source": "L2_MATERIALS", "target": "L3_NANOMATERIALS", "type": "NORMAL"},
-        {"source": "L2_AEROSPACE", "target": "L3_PROPULSION", "type": "NORMAL"},
-        {"source": "L2_AEROSPACE", "target": "L3_AVIONICS", "type": "NORMAL"},
-        {"source": "L2_GENART", "target": "L3_NEURAL_STYLE", "type": "NORMAL"},
-        {"source": "L2_GENART", "target": "L3_PROCEDURAL", "type": "NORMAL"},
-        {"source": "L2_MUSIC", "target": "L3_SYNTHESIS", "type": "NORMAL"},
-        {"source": "L2_MUSIC", "target": "L3_COMPOSITION", "type": "NORMAL"},
-        {"source": "L2_FILM", "target": "L3_RENDERING", "type": "NORMAL"},
-        {"source": "L2_FILM", "target": "L3_MOCAP", "type": "NORMAL"},
-
-        {"source": "L3_ML", "target": "L4_TRANSFORMER", "type": "NORMAL"},
-        {"source": "L3_ML", "target": "L4_GNN", "type": "NORMAL"},
-        {"source": "L3_ML", "target": "L4_REINFORCEMENT", "type": "NORMAL"},
-        {"source": "L3_DL", "target": "L4_TRANSFORMER", "type": "NORMAL"},
-        {"source": "L3_DL", "target": "L4_CNN", "type": "NORMAL"},
-        {"source": "L3_DL", "target": "L4_DIFFUSION", "type": "NORMAL"},
-        {"source": "L3_NLP", "target": "L4_LLM", "type": "NORMAL"},
-        {"source": "L3_NLP", "target": "L4_TRANSFORMER", "type": "NORMAL"},
-        {"source": "L3_STATS", "target": "L4_BAYES", "type": "NORMAL"},
-        {"source": "L3_STATS", "target": "L4_MONTE_CARLO", "type": "NORMAL"},
-        {"source": "L3_DIAGNOSIS", "target": "L4_CLINICAL_REASONING", "type": "NORMAL"},
-        {"source": "L3_TREATMENT", "target": "L4_CLINICAL_REASONING", "type": "NORMAL"},
-        {"source": "L3_IMAGING", "target": "L4_CNN", "type": "NORMAL"},
-        {"source": "L3_GENOMICS", "target": "L4_SEQUENCE_ANALYSIS", "type": "NORMAL"},
-        {"source": "L3_PERCEPTION", "target": "L4_LIDAR", "type": "NORMAL"},
-        {"source": "L3_PERCEPTION", "target": "L4_CNN", "type": "NORMAL"},
-        {"source": "L3_NEURAL_STYLE", "target": "L4_GAN", "type": "NORMAL"},
-        {"source": "L3_NEURAL_STYLE", "target": "L4_VAE", "type": "NORMAL"},
-        {"source": "L3_PROCEDURAL", "target": "L4_GAN", "type": "NORMAL"},
-        {"source": "L3_RENDERING", "target": "L4_NERF", "type": "NORMAL"},
-        {"source": "L3_MOCAP", "target": "L4_CNN", "type": "NORMAL"},
-
-        {"source": "L4_TRANSFORMER", "target": "L5_HOPFIELD", "type": "NORMAL"},
-        {"source": "L4_TRANSFORMER", "target": "L5_AGENTS", "type": "NORMAL"},
-        {"source": "L4_GNN", "target": "L5_WORLD", "type": "NORMAL"},
-        {"source": "L4_BAYES", "target": "L5_CAUSAL", "type": "NORMAL"},
-        {"source": "L4_CLINICAL_REASONING", "target": "L5_PERSONALIZED_MED", "type": "NORMAL"},
-        {"source": "L4_SEQUENCE_ANALYSIS", "target": "L5_DRUG_DISCOVERY", "type": "NORMAL"},
-        {"source": "L4_LLM", "target": "L5_AGENTS", "type": "NORMAL"},
-        {"source": "L4_LLM", "target": "L5_AGI_SAFETY", "type": "NORMAL"},
-        {"source": "L4_REINFORCEMENT", "target": "L5_AUTONOMOUS_VEH", "type": "NORMAL"},
-        {"source": "L4_REINFORCEMENT", "target": "L5_AGENTS", "type": "NORMAL"},
-        {"source": "L4_LIDAR", "target": "L5_AUTONOMOUS_VEH", "type": "NORMAL"},
-        {"source": "L4_LIDAR", "target": "L5_DIGITAL_TWIN", "type": "NORMAL"},
-        {"source": "L4_NERF", "target": "L5_DIGITAL_TWIN", "type": "NORMAL"},
-        {"source": "L4_DIFFUSION", "target": "L5_SCI_DISCOVERY", "type": "NORMAL"},
-        {"source": "L4_GAN", "target": "L5_SCI_DISCOVERY", "type": "NORMAL"},
-        {"source": "L4_MONTE_CARLO", "target": "L5_QUANTUM_ML", "type": "NORMAL"},
-
-        {"source": "L5_AGENTS", "target": "L6_SUPERINTELLIGENCE", "type": "NORMAL"},
-        {"source": "L5_AGENTS", "target": "L6_SELF_IMPROVING", "type": "NORMAL"},
-        {"source": "L5_AGI_SAFETY", "target": "L6_SUPERINTELLIGENCE", "type": "NORMAL"},
-        {"source": "L5_AGI_SAFETY", "target": "L6_CONSCIOUSNESS", "type": "NORMAL"},
-        {"source": "L5_WORLD", "target": "L6_CONSCIOUSNESS", "type": "NORMAL"},
-        {"source": "L5_HOPFIELD", "target": "L6_CONSCIOUSNESS", "type": "NORMAL"},
-        {"source": "L5_SPACE_AI", "target": "L6_MARS_COLONY", "type": "NORMAL"},
-        {"source": "L5_DIGITAL_TWIN", "target": "L6_FUSION_CONTROL", "type": "NORMAL"},
-        {"source": "L5_DRUG_DISCOVERY", "target": "L6_UNIVERSAL_CURE", "type": "NORMAL"},
-        {"source": "L5_PERSONALIZED_MED", "target": "L6_UNIVERSAL_CURE", "type": "NORMAL"},
-        {"source": "L5_AUTONOMOUS_RESEARCH", "target": "L6_SELF_IMPROVING", "type": "NORMAL"},
-        {"source": "L5_SCI_DISCOVERY", "target": "L5_EQUATION_DISCOVERY", "type": "NORMAL"},
-        {"source": "L5_AGENTS", "target": "L5_AUTONOMOUS_RESEARCH", "type": "NORMAL"}
+        {
+            "source": "L1_RESEARCH",
+            "target": "L2_AI",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_RESEARCH",
+            "target": "L2_DS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_RESEARCH",
+            "target": "L2_QUANTUM",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_HEALTHCARE",
+            "target": "L2_CLINICAL",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_HEALTHCARE",
+            "target": "L2_BIO",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_HEALTHCARE",
+            "target": "L2_PHARMA",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_EDUCATION",
+            "target": "L2_LEARNING",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_EDUCATION",
+            "target": "L2_ASSESSMENT",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_EDUCATION",
+            "target": "L2_CURRICULUM",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_FINANCE",
+            "target": "L2_ALGO_TRADING",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_FINANCE",
+            "target": "L2_RISK",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_FINANCE",
+            "target": "L2_BLOCKCHAIN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_ENGINEERING",
+            "target": "L2_ROBOTICS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_ENGINEERING",
+            "target": "L2_MATERIALS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_ENGINEERING",
+            "target": "L2_AEROSPACE",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_CREATIVE",
+            "target": "L2_GENART",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_CREATIVE",
+            "target": "L2_MUSIC",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_CREATIVE",
+            "target": "L2_FILM",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_AI",
+            "target": "L3_ML",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_AI",
+            "target": "L3_DL",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_AI",
+            "target": "L3_NLP",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_DS",
+            "target": "L3_STATS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_DS",
+            "target": "L3_ANALYTICS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_DS",
+            "target": "L3_VIZ",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_QUANTUM",
+            "target": "L3_QUBITS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_QUANTUM",
+            "target": "L3_QALGO",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_CLINICAL",
+            "target": "L3_DIAGNOSIS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_CLINICAL",
+            "target": "L3_TREATMENT",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_CLINICAL",
+            "target": "L3_IMAGING",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_BIO",
+            "target": "L3_GENOMICS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_BIO",
+            "target": "L3_PROTEOMICS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_PHARMA",
+            "target": "L3_DRUG_DESIGN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_PHARMA",
+            "target": "L3_CLINICAL_TRIALS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_ALGO_TRADING",
+            "target": "L3_HFT",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_ALGO_TRADING",
+            "target": "L3_PORTFOLIO",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_RISK",
+            "target": "L3_CREDIT_RISK",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_RISK",
+            "target": "L3_MARKET_RISK",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_BLOCKCHAIN",
+            "target": "L3_DEFI",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_BLOCKCHAIN",
+            "target": "L3_SMART_CONTRACTS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_ROBOTICS",
+            "target": "L3_PERCEPTION",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_ROBOTICS",
+            "target": "L3_CONTROL",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_ROBOTICS",
+            "target": "L3_SWARM",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_MATERIALS",
+            "target": "L3_COMPOSITES",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_MATERIALS",
+            "target": "L3_NANOMATERIALS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_AEROSPACE",
+            "target": "L3_PROPULSION",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_AEROSPACE",
+            "target": "L3_AVIONICS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_GENART",
+            "target": "L3_NEURAL_STYLE",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_GENART",
+            "target": "L3_PROCEDURAL",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_MUSIC",
+            "target": "L3_SYNTHESIS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_MUSIC",
+            "target": "L3_COMPOSITION",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_FILM",
+            "target": "L3_RENDERING",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_FILM",
+            "target": "L3_MOCAP",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_ML",
+            "target": "L4_TRANSFORMER",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_ML",
+            "target": "L4_GNN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_ML",
+            "target": "L4_REINFORCEMENT",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_DL",
+            "target": "L4_TRANSFORMER",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_DL",
+            "target": "L4_CNN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_DL",
+            "target": "L4_DIFFUSION",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_NLP",
+            "target": "L4_LLM",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_NLP",
+            "target": "L4_TRANSFORMER",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_STATS",
+            "target": "L4_BAYES",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_STATS",
+            "target": "L4_MONTE_CARLO",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_DIAGNOSIS",
+            "target": "L4_CLINICAL_REASONING",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_TREATMENT",
+            "target": "L4_CLINICAL_REASONING",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_IMAGING",
+            "target": "L4_CNN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_GENOMICS",
+            "target": "L4_SEQUENCE_ANALYSIS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_PERCEPTION",
+            "target": "L4_LIDAR",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_PERCEPTION",
+            "target": "L4_CNN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_NEURAL_STYLE",
+            "target": "L4_GAN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_NEURAL_STYLE",
+            "target": "L4_VAE",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_PROCEDURAL",
+            "target": "L4_GAN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_RENDERING",
+            "target": "L4_NERF",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_MOCAP",
+            "target": "L4_CNN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_TRANSFORMER",
+            "target": "L5_HOPFIELD",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_TRANSFORMER",
+            "target": "L5_AGENTS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_GNN",
+            "target": "L5_WORLD",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_BAYES",
+            "target": "L5_CAUSAL",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_CLINICAL_REASONING",
+            "target": "L5_PERSONALIZED_MED",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_SEQUENCE_ANALYSIS",
+            "target": "L5_DRUG_DISCOVERY",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_LLM",
+            "target": "L5_AGENTS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_LLM",
+            "target": "L5_AGI_SAFETY",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_REINFORCEMENT",
+            "target": "L5_AUTONOMOUS_VEH",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_REINFORCEMENT",
+            "target": "L5_AGENTS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_LIDAR",
+            "target": "L5_AUTONOMOUS_VEH",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_LIDAR",
+            "target": "L5_DIGITAL_TWIN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_NERF",
+            "target": "L5_DIGITAL_TWIN",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_DIFFUSION",
+            "target": "L5_SCI_DISCOVERY",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_GAN",
+            "target": "L5_SCI_DISCOVERY",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_MONTE_CARLO",
+            "target": "L5_QUANTUM_ML",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_AGENTS",
+            "target": "L6_SUPERINTELLIGENCE",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_AGENTS",
+            "target": "L6_SELF_IMPROVING",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_AGI_SAFETY",
+            "target": "L6_SUPERINTELLIGENCE",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_AGI_SAFETY",
+            "target": "L6_CONSCIOUSNESS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_WORLD",
+            "target": "L6_CONSCIOUSNESS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_HOPFIELD",
+            "target": "L6_CONSCIOUSNESS",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_SPACE_AI",
+            "target": "L6_MARS_COLONY",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_DIGITAL_TWIN",
+            "target": "L6_FUSION_CONTROL",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_DRUG_DISCOVERY",
+            "target": "L6_UNIVERSAL_CURE",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_PERSONALIZED_MED",
+            "target": "L6_UNIVERSAL_CURE",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_AUTONOMOUS_RESEARCH",
+            "target": "L6_SELF_IMPROVING",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_SCI_DISCOVERY",
+            "target": "L5_EQUATION_DISCOVERY",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_AGENTS",
+            "target": "L5_AUTONOMOUS_RESEARCH",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L1_RESEARCH",
+            "target": "L1_HEALTHCARE",
+            "type": "INTRA",
+            "label": "informs"
+        },
+        {
+            "source": "L1_RESEARCH",
+            "target": "L1_ENGINEERING",
+            "type": "INTRA",
+            "label": "enables"
+        },
+        {
+            "source": "L1_RESEARCH",
+            "target": "L1_EDUCATION",
+            "type": "INTRA",
+            "label": "drives"
+        },
+        {
+            "source": "L1_FINANCE",
+            "target": "L1_ENGINEERING",
+            "type": "INTRA",
+            "label": "funds"
+        },
+        {
+            "source": "L1_CREATIVE",
+            "target": "L1_EDUCATION",
+            "type": "INTRA",
+            "label": "inspires"
+        },
+        {
+            "source": "L1_ENGINEERING",
+            "target": "L1_HEALTHCARE",
+            "type": "INTRA",
+            "label": "tools for"
+        },
+        {
+            "source": "L1_HEALTHCARE",
+            "target": "L1_RESEARCH",
+            "type": "INTRA",
+            "label": "motivates"
+        },
+        {
+            "source": "L2_AI",
+            "target": "L2_DS",
+            "type": "INTRA",
+            "label": "leverages"
+        },
+        {
+            "source": "L2_DS",
+            "target": "L2_AI",
+            "type": "INTRA",
+            "label": "feeds"
+        },
+        {
+            "source": "L2_BIO",
+            "target": "L2_PHARMA",
+            "type": "INTRA",
+            "label": "informs"
+        },
+        {
+            "source": "L2_CLINICAL",
+            "target": "L2_BIO",
+            "type": "INTRA",
+            "label": "validates"
+        },
+        {
+            "source": "L2_ROBOTICS",
+            "target": "L2_AEROSPACE",
+            "type": "INTRA",
+            "label": "powers"
+        },
+        {
+            "source": "L2_GENART",
+            "target": "L2_FILM",
+            "type": "INTRA",
+            "label": "enhances"
+        },
+        {
+            "source": "L2_ALGO_TRADING",
+            "target": "L2_RISK",
+            "type": "INTRA",
+            "label": "hedges"
+        },
+        {
+            "source": "L2_BLOCKCHAIN",
+            "target": "L2_ALGO_TRADING",
+            "type": "INTRA",
+            "label": "decentralizes"
+        },
+        {
+            "source": "L2_QUANTUM",
+            "target": "L2_AI",
+            "type": "INTRA",
+            "label": "accelerates"
+        },
+        {
+            "source": "L2_LEARNING",
+            "target": "L2_ASSESSMENT",
+            "type": "INTRA",
+            "label": "evaluates"
+        },
+        {
+            "source": "L2_CURRICULUM",
+            "target": "L2_LEARNING",
+            "type": "INTRA",
+            "label": "structures"
+        },
+        {
+            "source": "L2_MATERIALS",
+            "target": "L2_AEROSPACE",
+            "type": "INTRA",
+            "label": "supplies"
+        },
+        {
+            "source": "L3_ML",
+            "target": "L3_DL",
+            "type": "INTRA",
+            "label": "foundation"
+        },
+        {
+            "source": "L3_ML",
+            "target": "L3_NLP",
+            "type": "INTRA",
+            "label": "underpins"
+        },
+        {
+            "source": "L3_DL",
+            "target": "L3_NLP",
+            "type": "INTRA",
+            "label": "powers"
+        },
+        {
+            "source": "L3_STATS",
+            "target": "L3_ANALYTICS",
+            "type": "INTRA",
+            "label": "enables"
+        },
+        {
+            "source": "L3_ANALYTICS",
+            "target": "L3_VIZ",
+            "type": "INTRA",
+            "label": "visualized by"
+        },
+        {
+            "source": "L3_GENOMICS",
+            "target": "L3_PROTEOMICS",
+            "type": "INTRA",
+            "label": "informs"
+        },
+        {
+            "source": "L3_DIAGNOSIS",
+            "target": "L3_TREATMENT",
+            "type": "INTRA",
+            "label": "precedes"
+        },
+        {
+            "source": "L3_TREATMENT",
+            "target": "L3_IMAGING",
+            "type": "INTRA",
+            "label": "guided by"
+        },
+        {
+            "source": "L3_DRUG_DESIGN",
+            "target": "L3_CLINICAL_TRIALS",
+            "type": "INTRA",
+            "label": "validated by"
+        },
+        {
+            "source": "L3_HFT",
+            "target": "L3_PORTFOLIO",
+            "type": "INTRA",
+            "label": "optimizes"
+        },
+        {
+            "source": "L3_CREDIT_RISK",
+            "target": "L3_MARKET_RISK",
+            "type": "INTRA",
+            "label": "correlates"
+        },
+        {
+            "source": "L3_DEFI",
+            "target": "L3_SMART_CONTRACTS",
+            "type": "INTRA",
+            "label": "built on"
+        },
+        {
+            "source": "L3_PERCEPTION",
+            "target": "L3_CONTROL",
+            "type": "INTRA",
+            "label": "feeds"
+        },
+        {
+            "source": "L3_CONTROL",
+            "target": "L3_SWARM",
+            "type": "INTRA",
+            "label": "coordinates"
+        },
+        {
+            "source": "L3_COMPOSITES",
+            "target": "L3_NANOMATERIALS",
+            "type": "INTRA",
+            "label": "incorporates"
+        },
+        {
+            "source": "L3_PROPULSION",
+            "target": "L3_AVIONICS",
+            "type": "INTRA",
+            "label": "integrated"
+        },
+        {
+            "source": "L3_SYNTHESIS",
+            "target": "L3_COMPOSITION",
+            "type": "INTRA",
+            "label": "enables"
+        },
+        {
+            "source": "L3_RENDERING",
+            "target": "L3_MOCAP",
+            "type": "INTRA",
+            "label": "visualizes"
+        },
+        {
+            "source": "L4_TRANSFORMER",
+            "target": "L4_LLM",
+            "type": "INTRA",
+            "label": "backbone"
+        },
+        {
+            "source": "L4_CNN",
+            "target": "L4_GAN",
+            "type": "INTRA",
+            "label": "generates"
+        },
+        {
+            "source": "L4_GAN",
+            "target": "L4_VAE",
+            "type": "INTRA",
+            "label": "alternative"
+        },
+        {
+            "source": "L4_DIFFUSION",
+            "target": "L4_GAN",
+            "type": "INTRA",
+            "label": "competes"
+        },
+        {
+            "source": "L4_GNN",
+            "target": "L4_TRANSFORMER",
+            "type": "INTRA",
+            "label": "complements"
+        },
+        {
+            "source": "L4_BAYES",
+            "target": "L4_MONTE_CARLO",
+            "type": "INTRA",
+            "label": "sampled by"
+        },
+        {
+            "source": "L5_WORLD",
+            "target": "L5_DIGITAL_TWIN",
+            "type": "INTRA",
+            "label": "models"
+        },
+        {
+            "source": "L5_CAUSAL",
+            "target": "L5_SCI_DISCOVERY",
+            "type": "INTRA",
+            "label": "discovers"
+        },
+        {
+            "source": "L5_AGI_SAFETY",
+            "target": "L5_AGENTS",
+            "type": "INTRA",
+            "label": "constrains"
+        },
+        {
+            "source": "L6_SUPERINTELLIGENCE",
+            "target": "L6_SELF_IMPROVING",
+            "type": "INTRA",
+            "label": "evolves via"
+        },
+        {
+            "source": "L6_CONSCIOUSNESS",
+            "target": "L6_SUPERINTELLIGENCE",
+            "type": "INTRA",
+            "label": "prerequisite"
+        },
+        {
+            "source": "L6_FUSION_CONTROL",
+            "target": "L6_MARS_COLONY",
+            "type": "INTRA",
+            "label": "powers"
+        },
+        {
+            "source": "L2_LEARNING",
+            "target": "L3_ADAPTIVE",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L2_ASSESSMENT",
+            "target": "L3_EXAM_AI",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_DL",
+            "target": "L4_MAMBA",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L3_DL",
+            "target": "L4_FLOW",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_TRANSFORMER",
+            "target": "L5_MULTIMODAL",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_CNN",
+            "target": "L5_MULTIMODAL",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_MAMBA",
+            "target": "L5_NEUROMORPHIC",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_SPACE_AI",
+            "target": "L6_DYSON",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L6_SUPERINTELLIGENCE",
+            "target": "L7_OMEGA",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L6_SELF_IMPROVING",
+            "target": "L7_OMEGA",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L6_CONSCIOUSNESS",
+            "target": "L7_SIMULATION",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L5_DIGITAL_TWIN",
+            "target": "L7_SIMULATION",
+            "type": "NORMAL"
+        },
+        {
+            "source": "L4_MAMBA",
+            "target": "L4_TRANSFORMER",
+            "type": "INTRA",
+            "label": "alternative"
+        },
+        {
+            "source": "L4_FLOW",
+            "target": "L4_DIFFUSION",
+            "type": "INTRA",
+            "label": "evolves from"
+        },
+        {
+            "source": "L5_MULTIMODAL",
+            "target": "L5_AGENTS",
+            "type": "INTRA",
+            "label": "empowers"
+        },
+        {
+            "source": "L5_NEUROMORPHIC",
+            "target": "L5_QUANTUM_ML",
+            "type": "INTRA",
+            "label": "hybridizes"
+        },
+        {
+            "source": "L3_ADAPTIVE",
+            "target": "L3_EXAM_AI",
+            "type": "INTRA",
+            "label": "assessed by"
+        }
     ],
     "conditional_edges": [
-        {"source": "L4_TRANSFORMER", "target": "L5_WORLD", "type": "CONDITION", "condition": {"field": "experience", "operator": ">=", "value": 3}},
-        {"source": "L4_TRANSFORMER", "target": "L5_AGENTS", "type": "CONDITION", "condition": {"field": "attention", "operator": "==", "value": true}},
-        {"source": "L4_GNN", "target": "L5_HOPFIELD", "type": "CONDITION", "condition": {"field": "graph_knowledge", "operator": "==", "value": true}},
-        {"source": "L4_BAYES", "target": "L5_CAUSAL", "type": "CONDITION", "condition": {"field": "probability", "operator": ">", "value": 5}},
-        {"source": "L4_CLINICAL_REASONING", "target": "L5_PERSONALIZED_MED", "type": "CONDITION", "condition": {"field": "medical_knowledge", "operator": ">=", "value": 8}},
-        {"source": "L4_SEQUENCE_ANALYSIS", "target": "L5_DRUG_DISCOVERY", "type": "CONDITION", "condition": {"field": "biology_knowledge", "operator": ">=", "value": 7}},
-        {"source": "L4_LLM", "target": "L5_AGI_SAFETY", "type": "CONDITION", "condition": {"field": "language_skill", "operator": ">=", "value": 8}},
-        {"source": "L4_REINFORCEMENT", "target": "L5_AUTONOMOUS_VEH", "type": "CONDITION", "condition": {"field": "rl_skill", "operator": ">=", "value": 7}},
-        {"source": "L4_NERF", "target": "L5_DIGITAL_TWIN", "type": "CONDITION", "condition": {"field": "rendering_skill", "operator": ">=", "value": 8}},
-        {"source": "L4_GAN", "target": "L5_SCI_DISCOVERY", "type": "CONDITION", "condition": {"field": "creativity_skill", "operator": ">", "value": 6}},
-        {"source": "L4_MONTE_CARLO", "target": "L5_QUANTUM_ML", "type": "CONDITION", "condition": {"field": "simulation_depth", "operator": ">=", "value": 5}},
-        {"source": "L5_AGENTS", "target": "L5_AUTONOMOUS_RESEARCH", "type": "CONDITION", "condition": {"field": "agent_skill", "operator": ">=", "value": 10}},
-        {"source": "L5_AUTONOMOUS_RESEARCH", "target": "L5_SCI_DISCOVERY", "type": "CONDITION", "condition": {"field": "agent_skill", "operator": ">=", "value": 10}},
-        {"source": "L5_SCI_DISCOVERY", "target": "L5_EQUATION_DISCOVERY", "type": "CONDITION", "condition": {"field": "research_skill", "operator": ">", "value": 7}},
-        {"source": "L5_WORLD", "target": "L5_HOPFIELD", "type": "CONDITION", "condition": {"field": "simulation_skill", "operator": ">", "value": 5}},
-        {"source": "L5_HOPFIELD", "target": "L5_CAUSAL", "type": "CONDITION", "condition": {"field": "memory_skill", "operator": ">=", "value": 8}},
-        {"source": "L5_DRUG_DISCOVERY", "target": "L5_PERSONALIZED_MED", "type": "CONDITION", "condition": {"field": "drug_design", "operator": ">=", "value": 5}},
-        {"source": "L5_AGI_SAFETY", "target": "L6_CONSCIOUSNESS", "type": "CONDITION", "condition": {"field": "alignment_skill", "operator": ">=", "value": 8}},
-        {"source": "L5_AGENTS", "target": "L6_SUPERINTELLIGENCE", "type": "CONDITION", "condition": {"field": "agent_skill", "operator": ">=", "value": 10}},
-        {"source": "L5_AUTONOMOUS_VEH", "target": "L5_SPACE_AI", "type": "CONDITION", "condition": {"field": "autonomy_level", "operator": ">=", "value": 4}},
-        {"source": "L5_DIGITAL_TWIN", "target": "L6_FUSION_CONTROL", "type": "CONDITION", "condition": {"field": "twin_fidelity", "operator": ">=", "value": 7}},
-        {"source": "L5_QUANTUM_ML", "target": "L6_SELF_IMPROVING", "type": "CONDITION", "condition": {"field": "quantum_skill", "operator": ">=", "value": 6}}
+        {
+            "source": "L4_TRANSFORMER",
+            "target": "L5_WORLD",
+            "type": "CONDITION",
+            "condition": {
+                "field": "experience",
+                "operator": ">=",
+                "value": 3
+            }
+        },
+        {
+            "source": "L4_TRANSFORMER",
+            "target": "L5_AGENTS",
+            "type": "CONDITION",
+            "condition": {
+                "field": "attention",
+                "operator": "==",
+                "value": true
+            }
+        },
+        {
+            "source": "L4_GNN",
+            "target": "L5_HOPFIELD",
+            "type": "CONDITION",
+            "condition": {
+                "field": "graph_knowledge",
+                "operator": "==",
+                "value": true
+            }
+        },
+        {
+            "source": "L4_BAYES",
+            "target": "L5_CAUSAL",
+            "type": "CONDITION",
+            "condition": {
+                "field": "probability",
+                "operator": ">",
+                "value": 5
+            }
+        },
+        {
+            "source": "L4_CLINICAL_REASONING",
+            "target": "L5_PERSONALIZED_MED",
+            "type": "CONDITION",
+            "condition": {
+                "field": "medical_knowledge",
+                "operator": ">=",
+                "value": 8
+            }
+        },
+        {
+            "source": "L4_SEQUENCE_ANALYSIS",
+            "target": "L5_DRUG_DISCOVERY",
+            "type": "CONDITION",
+            "condition": {
+                "field": "biology_knowledge",
+                "operator": ">=",
+                "value": 7
+            }
+        },
+        {
+            "source": "L4_LLM",
+            "target": "L5_AGI_SAFETY",
+            "type": "CONDITION",
+            "condition": {
+                "field": "language_skill",
+                "operator": ">=",
+                "value": 8
+            }
+        },
+        {
+            "source": "L4_REINFORCEMENT",
+            "target": "L5_AUTONOMOUS_VEH",
+            "type": "CONDITION",
+            "condition": {
+                "field": "rl_skill",
+                "operator": ">=",
+                "value": 7
+            }
+        },
+        {
+            "source": "L4_NERF",
+            "target": "L5_DIGITAL_TWIN",
+            "type": "CONDITION",
+            "condition": {
+                "field": "rendering_skill",
+                "operator": ">=",
+                "value": 8
+            }
+        },
+        {
+            "source": "L4_GAN",
+            "target": "L5_SCI_DISCOVERY",
+            "type": "CONDITION",
+            "condition": {
+                "field": "creativity_skill",
+                "operator": ">",
+                "value": 6
+            }
+        },
+        {
+            "source": "L4_MONTE_CARLO",
+            "target": "L5_QUANTUM_ML",
+            "type": "CONDITION",
+            "condition": {
+                "field": "simulation_depth",
+                "operator": ">=",
+                "value": 5
+            }
+        },
+        {
+            "source": "L5_AGENTS",
+            "target": "L5_AUTONOMOUS_RESEARCH",
+            "type": "CONDITION",
+            "condition": {
+                "field": "agent_skill",
+                "operator": ">=",
+                "value": 10
+            }
+        },
+        {
+            "source": "L5_AUTONOMOUS_RESEARCH",
+            "target": "L5_SCI_DISCOVERY",
+            "type": "CONDITION",
+            "condition": {
+                "field": "agent_skill",
+                "operator": ">=",
+                "value": 10
+            }
+        },
+        {
+            "source": "L5_SCI_DISCOVERY",
+            "target": "L5_EQUATION_DISCOVERY",
+            "type": "CONDITION",
+            "condition": {
+                "field": "research_skill",
+                "operator": ">",
+                "value": 7
+            }
+        },
+        {
+            "source": "L5_WORLD",
+            "target": "L5_HOPFIELD",
+            "type": "CONDITION",
+            "condition": {
+                "field": "simulation_skill",
+                "operator": ">",
+                "value": 5
+            }
+        },
+        {
+            "source": "L5_HOPFIELD",
+            "target": "L5_CAUSAL",
+            "type": "CONDITION",
+            "condition": {
+                "field": "memory_skill",
+                "operator": ">=",
+                "value": 8
+            }
+        },
+        {
+            "source": "L5_DRUG_DISCOVERY",
+            "target": "L5_PERSONALIZED_MED",
+            "type": "CONDITION",
+            "condition": {
+                "field": "drug_design",
+                "operator": ">=",
+                "value": 5
+            }
+        },
+        {
+            "source": "L5_AGI_SAFETY",
+            "target": "L6_CONSCIOUSNESS",
+            "type": "CONDITION",
+            "condition": {
+                "field": "alignment_skill",
+                "operator": ">=",
+                "value": 8
+            }
+        },
+        {
+            "source": "L5_AGENTS",
+            "target": "L6_SUPERINTELLIGENCE",
+            "type": "CONDITION",
+            "condition": {
+                "field": "agent_skill",
+                "operator": ">=",
+                "value": 10
+            }
+        },
+        {
+            "source": "L5_AUTONOMOUS_VEH",
+            "target": "L5_SPACE_AI",
+            "type": "CONDITION",
+            "condition": {
+                "field": "autonomy_level",
+                "operator": ">=",
+                "value": 4
+            }
+        },
+        {
+            "source": "L5_DIGITAL_TWIN",
+            "target": "L6_FUSION_CONTROL",
+            "type": "CONDITION",
+            "condition": {
+                "field": "twin_fidelity",
+                "operator": ">=",
+                "value": 7
+            }
+        },
+        {
+            "source": "L5_QUANTUM_ML",
+            "target": "L6_SELF_IMPROVING",
+            "type": "CONDITION",
+            "condition": {
+                "field": "quantum_skill",
+                "operator": ">=",
+                "value": 6
+            }
+        },
+        {
+            "source": "L4_MAMBA",
+            "target": "L5_MULTIMODAL",
+            "type": "CONDITION",
+            "condition": {
+                "field": "sequence_skill",
+                "operator": ">=",
+                "value": 6
+            }
+        },
+        {
+            "source": "L4_FLOW",
+            "target": "L5_SCI_DISCOVERY",
+            "type": "CONDITION",
+            "condition": {
+                "field": "flow_skill",
+                "operator": ">=",
+                "value": 5
+            }
+        },
+        {
+            "source": "L5_MULTIMODAL",
+            "target": "L6_CONSCIOUSNESS",
+            "type": "CONDITION",
+            "condition": {
+                "field": "multimodal_skill",
+                "operator": ">=",
+                "value": 8
+            }
+        },
+        {
+            "source": "L5_NEUROMORPHIC",
+            "target": "L6_SELF_IMPROVING",
+            "type": "CONDITION",
+            "condition": {
+                "field": "neuro_skill",
+                "operator": ">=",
+                "value": 5
+            }
+        }
     ]
 }

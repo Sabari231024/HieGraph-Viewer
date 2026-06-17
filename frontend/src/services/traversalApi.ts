@@ -41,3 +41,21 @@ export async function goBack(sessionId: string) {
   if (!res.ok) throw new Error(await res.text());
   return res.json();
 }
+
+export async function navigateTo(nodeId: string, sessionId: string) {
+  const res = await fetch(
+    `${API_BASE}/traversal/navigate-to/${nodeId}?session_id=${sessionId}`,
+    { method: 'POST' }
+  );
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+export async function switchParent(parentId: string, sessionId: string) {
+  const res = await fetch(
+    `${API_BASE}/traversal/switch-parent/${parentId}?session_id=${sessionId}`,
+    { method: 'POST' }
+  );
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}

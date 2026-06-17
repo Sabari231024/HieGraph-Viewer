@@ -106,3 +106,42 @@ class GraphService:
                 if ce.target not in node_ids or ce.target in exclude:
                     result.append(ce)
         return result
+
+    def get_parent_ids(self, node_id: str) -> List[str]:
+        """Return raw parent IDs (from normal edges only)."""
+        return list(self._parents.get(node_id, []))
+
+    def get_path_to_root(self, node_id: str) -> List[str]:
+        """Find a path from a Level-1 ancestor down to node_id.
+
+        Returns list of node IDs from root to node_id (inclusive),
+        e.g. [L1_X, L2_Y, L3_Z] for a Level-3 node.
+        Uses BFS upward through parents, preferring the shortest path.
+        """
+        node = self.get_node(node_id)
+        if node is None:
+            return []
+        if node.level == 1:
+            return [node_id]
+
+        # BFS upward from node_id
+        from collections import deque
+        queue: deque = deque()
+        queue.append([node_id])
+        visited = {node_id}
+
+        while queue:
+            path = queue.popleft()
+            current = path[-1]
+            current_node = self.get_node(current)
+            if current_node and current_node.level == 1:
+                # Found root — reverse to get root-first order
+                return list(reversed(path))
+
+            for pid in self.get_parent_ids(current):
+                if pid not in visited:
+                    visited.add(pid)
+                    queue.append(path + [pid])
+
+        return []  # No path found (shouldn't happen in a connected graph)
+

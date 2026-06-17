@@ -9,26 +9,27 @@ function NormalEdgeInner(props: EdgeProps) {
     targetY: props.targetY,
     sourcePosition: props.sourcePosition,
     targetPosition: props.targetPosition,
-    curvature: 0.25,
+    curvature: 0.3,
   });
 
   return (
     <>
-      {/* Glow layer */}
+      {/* Wide glow layer */}
       <BaseEdge
         id={`${props.id}-glow`}
         path={edgePath}
         style={{
           stroke: '#4c8bf5',
-          strokeWidth: 8,
-          strokeOpacity: 0.08,
-          filter: 'blur(4px)',
+          strokeWidth: 14,
+          strokeOpacity: 0.12,
+          filter: 'blur(6px)',
         }}
       />
+      {/* Main edge */}
       <BaseEdge
         id={props.id}
         path={edgePath}
-        style={{ stroke: '#4c8bf5', strokeWidth: 2 }}
+        style={{ stroke: '#5a9aff', strokeWidth: 3, strokeLinecap: 'round' }}
         markerEnd={props.markerEnd}
       />
     </>

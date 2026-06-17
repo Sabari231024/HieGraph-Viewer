@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Any
+from typing import Any, Optional
 
 
 class Condition(BaseModel):
@@ -15,7 +15,8 @@ class Edge(BaseModel):
 
     source: str
     target: str
-    type: str = "NORMAL"  # "NORMAL", "CONDITION", "EXIT"
+    type: str = "NORMAL"  # "NORMAL", "CONDITION", "EXIT", "INTRA"
+    label: Optional[str] = None
 
 
 class ConditionalEdge(BaseModel):

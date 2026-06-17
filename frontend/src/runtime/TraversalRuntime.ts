@@ -4,28 +4,52 @@ import { useStateStore } from '../store/stateStore';
 import { useConditionStore } from '../store/conditionStore';
 import { useUIStore } from '../store/uiStore';
 import { useNavStore } from '../store/navStore';
-import { enterNode, goBack } from '../services/traversalApi';
+import { enterNode, goBack, navigateTo, switchParent } from '../services/traversalApi';
 import { fetchLevelView, fetchFullGraph } from '../services/graphApi';
 import { toFlowNode, toFlowEdge } from './GraphRuntime';
 import { computeLayout, computeHierarchicalLayout } from '../graph/canvas/LayoutEngine';
 import type { GraphNode } from '../types/Node';
 import type { ConditionalEdge } from '../types/Edge';
 
+/** Tracks which parent we navigated through (set by backend) */
+let currentNavParent: string | null = null;
+export function getNavParent() { return currentNavParent; }
+
 /* ------------------------------------------------------------------ */
 /*  Apply a level-view API response to stores (full replace)          */
 /* ------------------------------------------------------------------ */
 function applyLevelView(data: any) {
-  const flowNodes = (data.nodes as GraphNode[]).map((n: GraphNode) => toFlowNode(n));
+  // Store the nav parent for dynamic exit node logic
+  currentNavParent = data.nav_parent ?? null;
+
+  // Primary nodes (same level only)
+  const primaryNodes = (data.nodes as GraphNode[]).map((n: GraphNode) => toFlowNode(n));
+
+  // Ghost nodes (conditional targets outside level — the ONLY exception)
+  const ghostNodes = (data.ghost_nodes ?? []).map((n: any) =>
+    toFlowNode({ ...n, is_ghost: true } as GraphNode)
+  );
+
+  const allFlowNodes = [...primaryNodes, ...ghostNodes];
+
+  // Primary edges (within level)
   const flowEdges = (data.edges ?? []).map((e: any, i: number) => toFlowEdge(e, i));
+
+  // Within-level conditional edges
   const condFlowEdges = (data.conditional_edges ?? []).map((e: any, i: number) =>
     toFlowEdge({ ...e, type: 'CONDITION' }, i + 1000)
   );
-  const allEdges = [...flowEdges, ...condFlowEdges];
 
-  // Layout all nodes for this level
-  const laid = computeLayout(flowNodes, allEdges);
+  // Ghost conditional edges (to ghost nodes)
+  const ghostCondEdges = (data.ghost_conditional_edges ?? []).map((e: any, i: number) =>
+    toFlowEdge({ ...e, type: 'CONDITION' }, i + 2000)
+  );
 
-  // Full replace — only this level shown
+  const allEdges = [...flowEdges, ...condFlowEdges, ...ghostCondEdges];
+
+  // Layout
+  const laid = computeLayout(allFlowNodes, allEdges);
+
   useGraphStore.getState().setNodes(laid.nodes);
   useGraphStore.getState().setEdges(allEdges);
 
@@ -33,8 +57,12 @@ function applyLevelView(data: any) {
   useStateStore.getState().updateFromResponse(data.state ?? {});
 
   // Update conditions
-  if (data.conditional_edges?.length) {
-    useConditionStore.getState().setActiveConditions(data.conditional_edges as ConditionalEdge[]);
+  const allCondEdgeData = [
+    ...(data.conditional_edges ?? []),
+    ...(data.ghost_conditional_edges ?? []),
+  ];
+  if (allCondEdgeData.length) {
+    useConditionStore.getState().setActiveConditions(allCondEdgeData as ConditionalEdge[]);
   } else {
     useConditionStore.getState().clear();
   }
@@ -42,7 +70,7 @@ function applyLevelView(data: any) {
   // Update nav
   useNavStore.getState().setFromResponse(data);
 
-  // Clear selection
+  // Clear selection & exit nodes
   useUIStore.getState().selectNode(null);
 }
 
@@ -81,7 +109,6 @@ export async function handleEnterNode(nodeId: string) {
     applyLevelView(data);
   } catch (err: any) {
     const msg = err.message || 'Enter failed';
-    // If it's a "no sub-levels" error, show it briefly as info, not a blocking error
     if (msg.includes('no sub-levels')) {
       useUIStore.getState().setError('ℹ️ This node has no sub-levels');
       setTimeout(() => useUIStore.getState().setError(null), 2500);
@@ -135,7 +162,6 @@ export async function handleShowFullGraph() {
     );
     const allEdges = [...flowEdges, ...condFlowEdges];
 
-    // Use hierarchical layout for full graph
     const laid = computeHierarchicalLayout(flowNodes, allEdges);
     useGraphStore.getState().setNodes(laid.nodes);
     useGraphStore.getState().setEdges(allEdges);
@@ -144,6 +170,7 @@ export async function handleShowFullGraph() {
     useConditionStore.getState().clear();
     useNavStore.getState().setFromResponse({ ...data, current_level: 0, nav_stack: [] });
     useUIStore.getState().selectNode(null);
+    currentNavParent = null;
   } catch (err: any) {
     useUIStore.getState().setError(err.message || 'Full graph failed');
   } finally {
@@ -152,12 +179,44 @@ export async function handleShowFullGraph() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Legacy stubs                                                      */
+/*  Navigate to breadcrumb: jump to any point in nav stack            */
 /* ------------------------------------------------------------------ */
-export async function handleExpand(nodeId: string) {
-  return handleEnterNode(nodeId);
+export async function handleNavigateTo(nodeId: string) {
+  const { sessionId } = useTraversalStore.getState();
+  if (!sessionId) return;
+
+  useUIStore.getState().setLoading(true);
+  useUIStore.getState().setError(null);
+
+  try {
+    const data = await navigateTo(nodeId, sessionId);
+    applyLevelView(data);
+  } catch (err: any) {
+    useUIStore.getState().setError(err.message || 'Navigation failed');
+  } finally {
+    useUIStore.getState().setLoading(false);
+  }
 }
 
-export async function handleCollapse(_exitNodeId: string) {
-  return handleGoBack();
+/* ------------------------------------------------------------------ */
+/*  Switch parent: rebuild trace through alternate parent              */
+/* ------------------------------------------------------------------ */
+export async function handleSwitchParent(parentId: string) {
+  const { sessionId } = useTraversalStore.getState();
+  if (!sessionId) return;
+
+  useUIStore.getState().setLoading(true);
+  useUIStore.getState().setError(null);
+
+  try {
+    const data = await switchParent(parentId, sessionId);
+    applyLevelView(data);
+  } catch (err: any) {
+    useUIStore.getState().setError(err.message || 'Switch parent failed');
+  } finally {
+    useUIStore.getState().setLoading(false);
+  }
 }
+
+export async function handleExpand(nodeId: string) { return handleEnterNode(nodeId); }
+export async function handleCollapse(_exitNodeId: string) { return handleGoBack(); }

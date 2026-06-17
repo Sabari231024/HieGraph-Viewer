@@ -1,7 +1,8 @@
 export interface GraphEdge {
   source: string;
   target: string;
-  type: 'NORMAL' | 'CONDITION' | 'EXIT';
+  type: 'NORMAL' | 'CONDITION' | 'EXIT' | 'INTRA';
+  label?: string;
 }
 
 export interface Condition {

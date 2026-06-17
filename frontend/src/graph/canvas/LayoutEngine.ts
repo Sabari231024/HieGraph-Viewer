@@ -1,8 +1,8 @@
 import type { Node, Edge } from '@xyflow/react';
 
-const NODE_SPACING = 280;
-const CIRCLE_RADIUS_BASE = 200;
-const CIRCLE_RADIUS_PER_NODE = 60;
+const NODE_SPACING = 340;
+const CIRCLE_RADIUS_BASE = 280;
+const CIRCLE_RADIUS_PER_NODE = 80;
 
 /**
  * Single-level radial layout: since we only show one level at a time,
@@ -29,7 +29,7 @@ export function computeLayout(
   }
 
   // For medium sets, use circular layout (like Neo4j)
-  if (count <= 12) {
+  if (count <= 14) {
     const radius = CIRCLE_RADIUS_BASE + count * CIRCLE_RADIUS_PER_NODE;
     const angleStep = (2 * Math.PI) / count;
     const startAngle = -Math.PI / 2; // Start from top
@@ -51,7 +51,7 @@ export function computeLayout(
   // For large sets, use grid layout
   const cols = Math.ceil(Math.sqrt(count * 1.5));
   const gridSpacingX = NODE_SPACING;
-  const gridSpacingY = 220;
+  const gridSpacingY = 300;
   const totalWidth = cols * gridSpacingX;
   const offsetX = -totalWidth / 2;
 
@@ -75,8 +75,8 @@ export function computeLayout(
 /*  Hierarchical layout for full-graph view                           */
 /* ------------------------------------------------------------------ */
 
-const HIER_Y_GAP = 220;
-const HIER_X_GAP = 200;
+const HIER_Y_GAP = 320;
+const HIER_X_GAP = 280;
 
 export function computeHierarchicalLayout(
   nodes: Node[],

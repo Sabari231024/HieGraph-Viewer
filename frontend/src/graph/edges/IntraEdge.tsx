@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { BaseEdge, getBezierPath, EdgeLabelRenderer, type EdgeProps } from '@xyflow/react';
 
-function ConditionalEdgeInner(props: EdgeProps) {
+function IntraEdgeInner(props: EdgeProps) {
   const [edgePath, labelX, labelY] = getBezierPath({
     sourceX: props.sourceX,
     sourceY: props.sourceY,
@@ -9,7 +9,7 @@ function ConditionalEdgeInner(props: EdgeProps) {
     targetY: props.targetY,
     sourcePosition: props.sourcePosition,
     targetPosition: props.targetPosition,
-    curvature: 0.3,
+    curvature: 0.4,
   });
 
   return (
@@ -19,19 +19,20 @@ function ConditionalEdgeInner(props: EdgeProps) {
         id={`${props.id}-glow`}
         path={edgePath}
         style={{
-          stroke: '#c060dd',
-          strokeWidth: 16,
-          strokeOpacity: 0.15,
-          filter: 'blur(8px)',
+          stroke: '#26c6da',
+          strokeWidth: 12,
+          strokeOpacity: 0.1,
+          filter: 'blur(6px)',
         }}
       />
+      {/* Main edge */}
       <BaseEdge
         id={props.id}
         path={edgePath}
         style={{
-          stroke: '#c060dd',
-          strokeWidth: 3,
-          strokeDasharray: '10,5',
+          stroke: '#26c6da',
+          strokeWidth: 2.5,
+          strokeDasharray: '8,4',
           strokeLinecap: 'round',
         }}
         markerEnd={props.markerEnd}
@@ -39,7 +40,7 @@ function ConditionalEdgeInner(props: EdgeProps) {
       {props.label && (
         <EdgeLabelRenderer>
           <div
-            className="neo-edge-label neo-edge-label--condition"
+            className="neo-edge-label neo-edge-label--intra"
             style={{
               position: 'absolute',
               transform: `translate(-50%, -50%) translate(${labelX}px, ${labelY}px)`,
@@ -54,4 +55,4 @@ function ConditionalEdgeInner(props: EdgeProps) {
   );
 }
 
-export const ConditionalEdgeComponent = memo(ConditionalEdgeInner);
+export const IntraEdgeComponent = memo(IntraEdgeInner);
